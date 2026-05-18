@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://cafeoneten.com/</loc>
+    <image:image>
+      <image:loc>https://cafeoneten.com/img/story/cafeoneten-exterior-1.png</image:loc>
+      <image:caption>Cafe OneTen exterior entrance — wooden doors, tropical palms, Nallagandla</image:caption>
+      <image:title>Cafe OneTen Exterior</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cafeoneten.com/menu</loc>
+    <image:image>
+      <image:loc>https://cafeoneten.com/img/heroes/menu-hero-desktop.webp</image:loc>
+      <image:caption>Cafe OneTen menu hero — vegetarian dishes, Nallagandla Hyderabad</image:caption>
+      <image:title>Cafe OneTen Menu Hero</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cafeoneten.com/visit</loc>
+    <image:image>
+      <image:loc>https://cafeoneten.com/img/heroes/visit-hero-desktop.webp</image:loc>
+      <image:caption>Cafe OneTen rooftop terrace — visit and reserve, Nallagandla</image:caption>
+      <image:title>Cafe OneTen Visit Hero</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cafeoneten.com/story</loc>
+    <image:image>
+      <image:loc>https://cafeoneten.com/img/heroes/story-hero-desktop.webp</image:loc>
+      <image:caption>Cafe OneTen story hero — botanical dining, Nallagandla</image:caption>
+      <image:title>Cafe OneTen Story Hero</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cafeoneten.com/img/story/cafeoneten-exterior-1.png</image:loc>
+      <image:caption>Cafe OneTen exterior entrance at Nallagandla, Hyderabad</image:caption>
+      <image:title>Cafe OneTen Exterior</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cafeoneten.com/faq</loc>
+    <image:image>
+      <image:loc>https://cafeoneten.com/img/heroes/faq-hero-desktop.webp</image:loc>
+      <image:caption>Cafe OneTen FAQ hero — frequently asked questions</image:caption>
+      <image:title>Cafe OneTen FAQ Hero</image:title>
+    </image:image>
+  </url>
+</urlset>

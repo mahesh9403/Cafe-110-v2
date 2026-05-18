@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://cafeoneten.com/sitemap.xml
+Sitemap: https://cafeoneten.com/sitemap-images.xml
