@@ -54,7 +54,8 @@
                      /img/heroes/hero-day-1619w.webp 1619w"
         imagesizes="100vw"
         fetchpriority="high" />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -67,7 +68,7 @@
     "telephone": "+918977641020",
     "image": [
       "https://cafeoneten.com/img/og/og-cafe-oneten-1200x630.jpg",
-      "https://cafeoneten.com/img/story/cafeoneten-exterior-1.png"
+      "https://cafeoneten.com/img/story/cafeoneten-exterior-1.webp"
     ],
     "logo": "https://cafeoneten.com/img/favicon/favicon.svg",
     "priceRange": "₹₹",

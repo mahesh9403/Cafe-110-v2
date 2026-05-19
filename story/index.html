@@ -36,7 +36,8 @@
   <link rel="preload" as="font" type="font/woff2" href="/fonts/jost-300.woff2" crossorigin />
   <link rel="preload" as="image" media="(max-width: 767px)" href="/img/heroes/story-hero-mobile.webp" fetchpriority="high" />
   <link rel="preload" as="image" media="(min-width: 768px)" href="/img/heroes/story-hero-desktop.webp" fetchpriority="high" />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",

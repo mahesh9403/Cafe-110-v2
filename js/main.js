@@ -226,7 +226,7 @@
     start();
   });
 
-  window.addEventListener('resize', () => { stop(); buildDots(); go(0); start(); });
+  window.addEventListener('resize', () => { stop(); buildDots(); requestAnimationFrame(() => { go(0); start(); }); });
 })();
 
 // ── MENU MODAL ──

@@ -34,7 +34,8 @@
   <link rel="preload" as="font" type="font/woff2" href="/fonts/dancing-script-700.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/cormorant-garamond-400.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/jost-300.woff2" crossorigin />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preload" href="/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
