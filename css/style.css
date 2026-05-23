@@ -82,15 +82,18 @@ nav.scrolled {
   box-shadow: 0 2px 24px rgba(28,18,10,0.3);
 }
 .nav-logo {
-  font-family: var(--font-script);
-  font-size: 1.9rem;
-  color: var(--gold);
   text-decoration: none;
-  letter-spacing: .5px;
-  transition: color 0.3s;
   justify-self: start;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s;
 }
-.nav-logo:hover { color: var(--gold-light); }
+.nav-logo img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+.nav-logo:hover { opacity: 0.8; }
 .nav-links {
   display: flex; align-items: center; gap: 3rem;
   list-style: none;
@@ -1308,10 +1311,10 @@ footer {
   gap: 4vw; margin-bottom: 4rem;
 }
 .footer-brand .wordmark {
-  font-family: var(--font-script);
-  font-size: 3rem;
-  color: var(--cream);
-  display: block; margin-bottom: .5rem;
+  display: block;
+  height: 80px;
+  width: auto;
+  margin-bottom: .8rem;
 }
 .footer-brand .tagline {
   font-family: var(--font-serif);
