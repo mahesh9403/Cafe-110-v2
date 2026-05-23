@@ -124,8 +124,8 @@ graph TD
 graph LR
     subgraph HOME_MAP["index.html — Home"]
         direction TB
-        H1["🎬 Hero — Single Static (Day only)\n(Night slide removed May 2026 — customer decision: lighting misrepresents interior)\n<picture> + srcset WebP (img/heroes/) — day only\nDesktop srcset: hero-day-{480,800,1200,1619}w.webp\nMobile srcset: hero-day-mobile-{480,852}w.webp\nDual preload in head: mobile media=(max-width:767px) · desktop media=(min-width:768px)\nSlide img: fetchpriority=high · decoding=sync\nNo dot navigation — removed with night slide\nReserve a Table + Explore Menu CTAs\nbottom-right desktop · bottom-left mobile\nNav: gold 'Reserve on WhatsApp' .nav-cta (desktop) · nmm-cta (mobile drawer)"]
-        H2["📢 Marquee\n(aria-hidden scrolling text)"]
+        H1["🎬 Hero — Single Static (Day only)\n(Night slide removed May 2026 — customer decision: lighting misrepresents interior)\n<picture> + srcset WebP (img/heroes/) — day only\nDesktop srcset: hero-day-{480,800,1200,1619}w.webp\nMobile srcset: hero-day-mobile-{480,852}w.webp\nDual preload in head: mobile media=(max-width:767px) · desktop media=(min-width:768px)\nSlide img: fetchpriority=high · decoding=sync\nNo dot navigation — removed with night slide\n⚠ 'Reserve a Table' CTA removed May 2026 — only 'Explore Menu →' remains in hero\nNav: gold 'Book on Dineout' .nav-cta (desktop) → Swiggy Dineout · nmm-cta (mobile drawer)"]
+        H2["📢 Marquee\n(aria-hidden scrolling text)\nItems: Botanical Luxe · Nallagandla · Rooftop Dining · Artisanal Coffee · Est. November 2025 · 4.6 ★ on Google · Free Wi-Fi\n⚠ 'All Vegetarian' removed May 2026 — customer decision"]
         H3["📖 Story Section\n(001 / Our Story\nHeading: 'From the very beginning.'\nLetter-style narrative — no images\nSign-off: 'With love, OneTen'\nStat cards: 4.6★ · 220+ reviews · 2 floors of dining · ₹1,300 avg check)"]
         H5["🍽️ Food Section\n(002 / Signature Dishes — 5 local WebP cards from img/dishes/\nTagline: 'Seasonal Ingredients, Hygienically Handled and Plated.'\nCards: Deconstructed Tiramisu · Assorted Bread Basket\nBelgian Slice · Fruit Cake Slice · Peri Peri Paneer Rice Bowl)"]
         H6["🖼️ Menu Gallery\n(2 image cards: Food + Bev, opens modal)"]
@@ -227,7 +227,7 @@ graph TD
         C0["Fonts (merged from fonts.css)\n13 @font-face: Dancing Script (400/600/700)\nCormorant Garamond (300/400/500 + italic 300/400)\nJost (200/300/400/500/600)\nAll font-display: swap"]
         C1["Design Tokens\n--gold --espresso --cream\n--font-script --font-serif --font-sans"]
         C2["Reset & Base\n* box-sizing, body (no overflow-x), a, button"]
-        C3["Navigation\nnav · .nav-logo (flex container → <img> 48px height)\n.nav-links\n.nav-cta (desktop homepage CTA · hidden ≤768px)\n.nav-hamburger · .nav-mobile-menu · .nmm-cta"]
+        C3["Navigation\nnav · .nav-logo (flex container → <img> 48px height)\n.nav-links\n.nav-cta (desktop CTA · hidden ≤768px · 'Book on Dineout' → Swiggy Dineout)\n.nav-hamburger · .nav-mobile-menu · .nmm-cta ('Book on Dineout' → Swiggy Dineout)"]
         C4["Page Hero\n.page-hero · .page-hero-overlay\n.page-hero-cta (bottom-right)"]
         C5["Home Sections\n#hero · .hero-slides (overflow-x:hidden) · .hero-slide\n.hero-cta-group · (no .hero-dots — removed with night slide)\n.sr-only · .marquee-section (overflow:hidden) · .marquee-track · #story\n.food-section · #menu-gallery\n.experience · #menu-home\n.reviews-slider\n(no .hero-scroll / .scroll-line — removed)\n(no .big-marquee — removed)"]
         C6["Subpage Sections\n.menu-page-section\n.visit-page-wrap\n.story-page-section · .story-letter-card\n.slc-heading · .slc-body · .slc-closing\n.slc-signoff · .slc-illustration\n.faq-page-section · .faq-page-inner\n.privacy-content · .privacy-updated"]
@@ -292,7 +292,7 @@ graph TD
 graph LR
     SITE["Cafe OneTen Website"]
 
-    SITE -->|"WhatsApp CTA\n+91 89776 41020"| WA["WhatsApp\nwa.me/918977641020"]
+    SITE -->|"WhatsApp (footer/contact only)\n+91 89776 41020"| WA["WhatsApp\nwa.me/918977641020"]
     SITE -->|"Reservation"| ZOM["Zomato Dineout"]
     SITE -->|"Reservation"| SWI["Swiggy Dineout"]
     SITE -->|"Reservation"| EZD["EazyDiner"]
@@ -312,4 +312,7 @@ graph LR
 | May 23 2026 | Replaced all hero images (home, menu, visit, faq) with new WebPs | Customer: remove vegetarian branding from hero imagery |
 | May 23 2026 | Home mobile hero iterated ×4 — final version clears top zone, proper left margin | Nav logo clash + string lights in glass resolved |
 | May 23 2026 | Removed all prices from `/menu` page (HTML, title, meta, dietary note) | Customer: prices fluctuate, don't want to show them |
+| May 23 2026 | Removed 'All Vegetarian' from homepage marquee strip | Customer does not want vegetarian branding |
+| May 23 2026 | Removed 'Reserve a Table' button from home hero — only 'Explore Menu →' remains | Customer request |
+| May 23 2026 | Changed all 'Reserve on WhatsApp' nav/CTA buttons → 'Book on Dineout' (Swiggy Dineout) sitewide (7 pages) | WhatsApp reservation redirect unwanted by customer |
 | May 23 2026 | Story hero unchanged | No replacement image provided |
