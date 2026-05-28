@@ -274,8 +274,8 @@ graph TD
 
     subgraph CRAWL["Crawl & Discovery"]
         R["robots.txt\nAllow all · Sitemap pointer"]
-        SX["sitemap.xml\n6 URLs · weekly/monthly/yearly changefreq"]
-        SI["sitemap-images.xml\nImage URLs per page for Google\n(WebP heroes · story images)"]
+        SX["sitemap.xml\n6 URLs · weekly/monthly/yearly changefreq\nAll subpage URLs use trailing slash (/menu/ etc.) — May 2026 fix"]
+        SI["sitemap-images.xml\nImage URLs per page for Google\n(WebP heroes · story images)\nAll subpage locs use trailing slash — May 2026 fix\nMenu hero caption updated: vegetarian → signature"]
         HT[".htaccess\nHTTPS redirect · www→non-www\nClean URLs · Security headers\nGzip · Cache-Control"]
     end
 
@@ -316,3 +316,5 @@ graph LR
 | May 23 2026 | Removed 'Reserve a Table' button from home hero — only 'Explore Menu →' remains | Customer request |
 | May 23 2026 | Changed all 'Reserve on WhatsApp' nav/CTA buttons → 'Book on Dineout' (Swiggy Dineout) sitewide (7 pages) | WhatsApp reservation redirect unwanted by customer |
 | May 23 2026 | Story hero unchanged | No replacement image provided |
+| May 28 2026 | Fixed sitemap.xml — added trailing slash to all 5 subpage URLs (`/menu/`, `/visit/`, `/story/`, `/faq/`, `/privacy/`) | Apache `!-d` condition skips rewrite for real directories, causing 301 redirect on non-trailing-slash URLs; sitemap now points to final canonical URL — resolves GSC "Redirect error" |
+| May 28 2026 | Fixed sitemap-images.xml — same trailing slash fix on all 4 subpage `<loc>` entries; updated `/menu` hero caption from "vegetarian dishes" to "signature dishes" | Same redirect root cause; caption was stale copy from before May 23 vegetarian branding removal |
