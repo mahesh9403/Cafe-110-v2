@@ -26,6 +26,7 @@ graph TD
         SITEMAP_XML["sitemap.xml"]
         SITEMAP_IMG["sitemap-images.xml"]
         HTACCESS[".htaccess"]
+        LLMS["llms.txt\nAI visibility file (llmstxt.org spec)\nFull cafe info for ChatGPT · Claude · Perplexity · Gemini\nAdded May 2026"]
     end
 
     subgraph PAGES["📁 Pages"]
@@ -318,3 +319,4 @@ graph LR
 | May 23 2026 | Story hero unchanged | No replacement image provided |
 | May 28 2026 | Fixed sitemap.xml — added trailing slash to all 5 subpage URLs (`/menu/`, `/visit/`, `/story/`, `/faq/`, `/privacy/`) | Apache `!-d` condition skips rewrite for real directories, causing 301 redirect on non-trailing-slash URLs; sitemap now points to final canonical URL — resolves GSC "Redirect error" |
 | May 28 2026 | Fixed sitemap-images.xml — same trailing slash fix on all 4 subpage `<loc>` entries; updated `/menu` hero caption from "vegetarian dishes" to "signature dishes" | Same redirect root cause; caption was stale copy from before May 23 vegetarian branding removal |
+| May 28 2026 | Added `llms.txt` at site root | AI visibility file (llmstxt.org spec) — gives ChatGPT, Claude, Perplexity, Gemini structured accurate info about the cafe for recommendation queries |
