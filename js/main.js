@@ -234,38 +234,49 @@
   const MENUS = {
     food: {
       label: 'Food Menu',
-      // mobile: one portrait page at a time (12 total)
+      // mobile: one portrait page at a time (11 total — section poster + 10 pages)
       pages: [
-        '/img/menu-pages/food-1-1.webp', '/img/menu-pages/food-1-2.webp',
-        '/img/menu-pages/food-2-1.webp', '/img/menu-pages/food-2-2.webp',
-        '/img/menu-pages/food-3-1.webp', '/img/menu-pages/food-3-2.webp',
-        '/img/menu-pages/food-4-1.webp', '/img/menu-pages/food-4-2.webp',
-        '/img/menu-pages/food-5.webp',
-        '/img/menu-pages/food-6-1.webp', '/img/menu-pages/food-6-2.webp',
-        '/img/menu-pages/food-7.webp'
+        '/img/menu-pages/food-1.webp',
+        '/img/menu-pages/food-2.webp',  '/img/menu-pages/food-3.webp',
+        '/img/menu-pages/food-4.webp',  '/img/menu-pages/food-5.webp',
+        '/img/menu-pages/food-6.webp',  '/img/menu-pages/food-7.webp',
+        '/img/menu-pages/food-8.webp',  '/img/menu-pages/food-9.webp',
+        '/img/menu-pages/food-10.webp', '/img/menu-pages/food-11.webp'
       ],
-      // desktop: paired landscape spreads (7 total)
+      // desktop: poster alone, then pages paired like an open book (6 total)
       spreads: [
-        ['/img/menu-pages/food-1-1.webp', '/img/menu-pages/food-1-2.webp'],
-        ['/img/menu-pages/food-2-1.webp', '/img/menu-pages/food-2-2.webp'],
-        ['/img/menu-pages/food-3-1.webp', '/img/menu-pages/food-3-2.webp'],
-        ['/img/menu-pages/food-4-1.webp', '/img/menu-pages/food-4-2.webp'],
-        ['/img/menu-pages/food-5.webp'],
-        ['/img/menu-pages/food-6-1.webp', '/img/menu-pages/food-6-2.webp'],
-        ['/img/menu-pages/food-7.webp']
+        ['/img/menu-pages/food-1.webp'],
+        ['/img/menu-pages/food-2.webp',  '/img/menu-pages/food-3.webp'],
+        ['/img/menu-pages/food-4.webp',  '/img/menu-pages/food-5.webp'],
+        ['/img/menu-pages/food-6.webp',  '/img/menu-pages/food-7.webp'],
+        ['/img/menu-pages/food-8.webp',  '/img/menu-pages/food-9.webp'],
+        ['/img/menu-pages/food-10.webp', '/img/menu-pages/food-11.webp']
       ]
     },
     bev: {
       label: 'Beverages',
       pages: [
-        '/img/menu-pages/bev-1-1.webp', '/img/menu-pages/bev-1-2.webp',
-        '/img/menu-pages/bev-2-1.webp', '/img/menu-pages/bev-2-2.webp',
-        '/img/menu-pages/bev-3-1.webp', '/img/menu-pages/bev-3-2.webp'
+        '/img/menu-pages/bev-1.webp',
+        '/img/menu-pages/bev-2.webp', '/img/menu-pages/bev-3.webp',
+        '/img/menu-pages/bev-4.webp', '/img/menu-pages/bev-5.webp',
+        '/img/menu-pages/bev-6.webp', '/img/menu-pages/bev-7.webp'
       ],
       spreads: [
-        ['/img/menu-pages/bev-1-1.webp', '/img/menu-pages/bev-1-2.webp'],
-        ['/img/menu-pages/bev-2-1.webp', '/img/menu-pages/bev-2-2.webp'],
-        ['/img/menu-pages/bev-3-1.webp', '/img/menu-pages/bev-3-2.webp']
+        ['/img/menu-pages/bev-1.webp'],
+        ['/img/menu-pages/bev-2.webp', '/img/menu-pages/bev-3.webp'],
+        ['/img/menu-pages/bev-4.webp', '/img/menu-pages/bev-5.webp'],
+        ['/img/menu-pages/bev-6.webp', '/img/menu-pages/bev-7.webp']
+      ]
+    },
+    dessert: {
+      label: 'Desserts',
+      pages: [
+        '/img/menu-pages/dessert-1.webp',
+        '/img/menu-pages/dessert-2.webp', '/img/menu-pages/dessert-3.webp'
+      ],
+      spreads: [
+        ['/img/menu-pages/dessert-1.webp'],
+        ['/img/menu-pages/dessert-2.webp', '/img/menu-pages/dessert-3.webp']
       ]
     }
   };
@@ -289,12 +300,16 @@
     return isMobile() ? MENUS[activeTab].pages : MENUS[activeTab].spreads;
   }
 
+  // Drives every tab off the MENUS keys, so adding a section needs no change here.
+  // Element id convention: 'mmTab' + capitalised key (food -> mmTabFood).
   function updateTabCounts() {
-    const foodEl = document.getElementById('mmTabFood');
-    const bevEl  = document.getElementById('mmTabBev');
     const mobile = isMobile();
-    if (foodEl) foodEl.textContent = (mobile ? MENUS.food.pages : MENUS.food.spreads).length + ' pages';
-    if (bevEl)  bevEl.textContent  = (mobile ? MENUS.bev.pages  : MENUS.bev.spreads).length  + ' pages';
+    Object.keys(MENUS).forEach(key => {
+      const el = document.getElementById('mmTab' + key.charAt(0).toUpperCase() + key.slice(1));
+      if (!el) return;
+      const n = (mobile ? MENUS[key].pages : MENUS[key].spreads).length;
+      el.textContent = n + (n === 1 ? ' page' : ' pages');
+    });
   }
 
   function buildDots() {

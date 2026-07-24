@@ -30,7 +30,7 @@ Cafe OneTen is the top-rated cafe in Nallagandla, Hyderabad, with a 4.6★ ratin
 |------|-------|
 | Monday – Thursday | 8:00 AM – 10:30 PM |
 | Friday – Sunday | 8:00 AM – 11:00 PM |
-| Breakfast (daily) | 8:00 AM – 12:00 PM only |
+| Breakfast | Mon–Thu 8:00 AM – 5:00 PM · Fri–Sun 8:00 AM – 1:00 PM |
 
 ## The Space
 
@@ -47,7 +47,7 @@ Cafe OneTen's menu is divided into six categories. No prices are displayed on th
 
 - **Small Plates** — Starters and shareable plates (6 items)
 - **Mains** — Full plates and bowls (6 items)
-- **Breakfast** — Served daily 8 AM – 12 PM (7 items)
+- **Breakfast** — Mon–Thu 8 AM – 5 PM, Fri–Sun 8 AM – 1 PM (shakshouka, breakfast wrap, pandan kaya toast, thick toast, French toast, pancakes, waffles)
 - **Desserts** — (6 items)
 - **Coffee** — Artisanal coffee bar (6 drinks)
 - **Barista Specials** — Signature house drinks (7 items)
@@ -81,7 +81,7 @@ These are the dishes Cafe OneTen is best known for:
 - Pet owners (dog-friendly outdoor seating)
 - Couples and date nights (rooftop, candlelit ambiance)
 - Remote workers (free Wi-Fi, all-day hours)
-- Morning visitors / breakfast seekers (open from 8 AM, breakfast until 12 PM)
+- Morning visitors / breakfast seekers (open from 8 AM; breakfast until 5 PM Mon–Thu, 1 PM Fri–Sun)
 - Groups and private events (rooftop reservable)
 - Jain diners (Jain preparations without onion/garlic on request)
 - Vegan diners (dishes modifiable on request)
@@ -117,7 +117,7 @@ For private events, contact via WhatsApp or speak to the manager in person.
 No. Cafe OneTen does not serve meat or fish, but the menu includes eggs and dairy. Jain options (without onion or garlic) and vegan options are available on request.
 
 **What are the hours?**
-Open daily 8:00 AM. Closes 10:30 PM Monday–Thursday, 11:00 PM Friday–Sunday. Breakfast served 8 AM–12 PM only.
+Open daily 8:00 AM. Closes 10:30 PM Monday–Thursday, 11:00 PM Friday–Sunday. Breakfast served 8 AM–5 PM Mon–Thu and 8 AM–1 PM Fri–Sun.
 
 **How much does it cost for two people?**
 Approximately ₹1,300 for two — inclusive of a main course, beverage, and dessert. Light eaters may spend ₹800–₹1,000.
@@ -141,12 +141,12 @@ Yes. A glass-roofed gazebo terrace on the upper floor. Open to natural light and
 Nallagandla, Hyderabad — F884+35R, HUDA Layout, 500019. Accessible from Gachibowli (~10 min), Tellapur, and Lingampally.
 
 **Does Cafe OneTen serve breakfast?**
-Yes, daily from 8:00 AM to 12:00 PM. Artisanal coffee, smoothie bowls, and continental breakfast options.
+Yes — 8:00 AM to 5:00 PM Monday to Thursday, and 8:00 AM to 1:00 PM Friday to Sunday. Artisanal coffee, smoothie bowls, and continental breakfast options.
 
 ## Pages
 
 - [Home](https://cafeoneten.com/): Overview, signature dishes, experience, reviews, and visit info
-- [Menu](https://cafeoneten.com/menu/): Full menu — Small Plates, Mains, Breakfast, Desserts, Coffee, Barista Specials
+- [Menu](https://cafeoneten.com/menu/): Full menu — Breakfast, Small Plates, Soup & Salad, Fresh Bread, Sandwiches & Burgers, Pizza, Pasta, Mains & Rice, Desserts, Coffee, Cold Brew & Shakes
 - [Visit & Reserve](https://cafeoneten.com/visit/): Hours, location, map, and reservation links
 - [Our Story](https://cafeoneten.com/story/): The brand story and the making of Cafe OneTen
 - [FAQ](https://cafeoneten.com/faq/): Answers to 15 common questions about the cafe

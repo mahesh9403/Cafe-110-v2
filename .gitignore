@@ -1,3 +1,7 @@
 .mcp.json
 .env
 .DS_Store
+
+# Menu source artwork — 41 MB Canva export, converted to img/menu-pages/*.webp.
+# The site never loads the PDF itself, so keep it out of history.
+OneTen Menu.pdf

@@ -5,7 +5,7 @@
 | Route | File | Description |
 |-------|------|-------------|
 | `/` | `index.html` | Home — single hero (day only, night removed May 2026), marquee, story (stats: 4.6★ · 220+ reviews · **2 floors** · ₹1,300), food (5 signature dish WebPs), menu gallery, experience, menu preview, reviews, visit. Hero images served as WebP with srcset from `img/heroes/`; preload hint in `<head>`. Logo: `img/logo/oneten-white-logo.webp`. `<title>` is just "Cafe OneTen". |
-| `/menu` | `menu/index.html` | "OneTen favourites" — Small Plates · Mains · Breakfast · Desserts · Coffee · Barista Specials. **No prices shown** (removed May 2026 — customer decision, prices fluctuate). No price tags or PRICE_TBD placeholders remain. Jain and vegan options on request. Menu modal. |
+| `/menu` | `menu/index.html` | "OneTen favourites" — 11 category blocks rebuilt from `OneTen Menu.pdf` (July 2026): Breakfast · Small Plates · Soup & Salad · Fresh Bread · Sandwiches & Burgers · Pizza · Pasta · Mains & Rice · Desserts · Coffee · Cold Brew, Matcha & Shakes. **No prices shown** (May 2026 customer decision). Egg-containing dishes tagged. Menu modal now has **3 tabs** (Food · Beverages · Desserts). |
 | `/visit` | `visit/index.html` | Hours, map, reservation buttons. Amenities: Dog-friendly outdoor seating · Free Parking · Free Wi-Fi (wheelchair accessible removed). |
 | `/story` | `story/index.html` | Brand story, editorial narrative, The Space dark panel |
 | `/faq` | `faq/index.html` | 15 FAQ accordions (updated May 2026), FAQPage schema. Pure Veg answer: No (eggs & dairy served). |
@@ -47,7 +47,7 @@ graph TD
         STORY_IMG["story/\nstory-letter-card-cafe-oneten.jpg ← active letter card\nOurstory.avif (source, kept for reference)\ncafeoneten-exterior-1.png\ncafeoneten-exterior-2.png\nillustrated-logo-cafe-oneten.webp"]
         LOGO["logo/\noneten-white-logo.webp ← primary (800×254, cropped, no padding)\noneten-white-logo.png  ← fallback\n(White wordmark on transparent bg\nUsed in: nav .nav-logo img · footer .wordmark img\nNav display: 48px height · Footer display: 80px height)"]
         DISHES["dishes/\n5 local WebP signature dish images (updated May 2026)\ndeconstructed-tiramisu-cafe-oneten.webp  (1084×1600 portrait)\nassorted-bread-basket-cafe-oneten.webp   (1280×720 landscape)\nbelgian-slice-cafe-oneten.webp           (720×1280 portrait)\nfruit-cake-slice-cafe-oneten.webp        (804×1280 portrait)\nperi-peri-paneer-rice-bowl-cafe-oneten.webp (720×1280 portrait)"]
-        MENU_PAGES["menu-pages/ ← portrait pages (mobile + desktop spread source)\nfood-1-1.webp … food-7.webp (12 pages)\nbev-1-1.webp … bev-3-2.webp (6 pages)"]
+        MENU_PAGES["menu-pages/ ← portrait pages (mobile + desktop spread source)\nRebuilt July 2026 from OneTen Menu.pdf @150 DPI → 1241×1755 WebP q82\nfood-1.webp … food-11.webp (poster + 10 pages)\nbev-1.webp … bev-7.webp (poster + 6 pages)\ndessert-1.webp … dessert-3.webp (poster + 2 pages)\n21 files · 2.3 MB total"]
         OG["og/\nog-cafe-oneten-1200x630.jpg\n(1200×630 — OG/Twitter Card image)"]
         FAV["favicon/\nfavicon.svg (embedded PNG, ~5.7KB)\nfavicon-32.png · favicon-192.png\nfavicon-512.png · apple-touch-icon.png\nAll: gold 'OneTen' wordmark on WHITE bg, rounded corners (~22% radius)\nSource: OneTen Gold Logo.webp (tight-cropped, square-padded via Python/PIL)"]
     end
@@ -195,13 +195,15 @@ graph TD
         DETECT["isMobile()\nwindow.innerWidth < 768?"]
 
         subgraph DESKTOP["Desktop ≥ 768px"]
-            DT_FOOD["Food: 7 spreads\n#mmImg (left page) + #mmImgR (right page)\nside-by-side in mm-img-wrap flex row"]
-            DT_BEV["Beverages: 3 spreads\n#mmImg + #mmImgR side-by-side"]
+            DT_FOOD["Food: 6 spreads (poster alone, then pairs)\n#mmImg (left page) + #mmImgR (right page)\nside-by-side in mm-img-wrap flex row"]
+            DT_BEV["Beverages: 4 spreads"]
+            DT_DES["Desserts: 2 spreads"]
         end
 
         subgraph MOBILE["Mobile < 768px"]
-            MB_FOOD["Food: 12 portrait pages\n/img/menu-pages/food-*.webp\n(local, full-width)"]
-            MB_BEV["Beverages: 6 portrait pages\n/img/menu-pages/bev-*.webp\n(local, full-width)"]
+            MB_FOOD["Food: 11 portrait pages\n/img/menu-pages/food-*.webp\n(local, full-width)"]
+            MB_BEV["Beverages: 7 portrait pages\n/img/menu-pages/bev-*.webp"]
+            MB_DES["Desserts: 3 portrait pages\n/img/menu-pages/dessert-*.webp"]
         end
 
         OPEN --> DETECT
@@ -210,12 +212,14 @@ graph TD
     end
 
     subgraph MOBILE_IMGS["📁 img/menu-pages/"]
-        FM["food-1-1.webp · food-1-2.webp\nfood-2-1.webp · food-2-2.webp\nfood-3-1.webp · food-3-2.webp\nfood-4-1.webp · food-4-2.webp\nfood-5.webp\nfood-6-1.webp · food-6-2.webp\nfood-7.webp\n(~72–148 KB each)"]
-        BM["bev-1-1.webp · bev-1-2.webp\nbev-2-1.webp · bev-2-2.webp\nbev-3-1.webp · bev-3-2.webp\n(~78–124 KB each)"]
+        FM["food-1.webp (Food poster)\nfood-2 … food-11 (Breakfast ×2 · Fresh Bread · Soup+Salad\nSmall Plates ×2 · Sandwich+Burger · Pizza · Pasta · Main+Rice)\n(~77–154 KB each)"]
+        BM["bev-1.webp (Drinks poster)\nbev-2 … bev-7 (Coffee · Cold Brew+Crème · Speciality\nTea+Matcha · Juice+Mojito+Shakes · Smoothies+Extras)\n(~72–96 KB each)"]
+        DM["dessert-1.webp (Desserts poster)\ndessert-2 · dessert-3 (Plated Desserts)\n(~81–129 KB each)"]
     end
 
     MB_FOOD --> FM
     MB_BEV --> BM
+    MB_DES --> DM
 ```
 
 ---
@@ -232,7 +236,7 @@ graph TD
         C4["Page Hero\n.page-hero · .page-hero-overlay\n.page-hero-cta (bottom-right)"]
         C5["Home Sections\n#hero · .hero-slides (overflow-x:hidden) · .hero-slide\n.hero-cta-group · (no .hero-dots — removed with night slide)\n.sr-only · .marquee-section (overflow:hidden) · .marquee-track · #story\n.food-section · #menu-gallery\n.experience · #menu-home\n.reviews-slider\n(no .hero-scroll / .scroll-line — removed)\n(no .big-marquee — removed)"]
         C6["Subpage Sections\n.menu-page-section\n.visit-page-wrap\n.story-page-section · .story-letter-card\n.slc-heading · .slc-body · .slc-closing\n.slc-signoff · .slc-illustration\n.faq-page-section · .faq-page-inner\n.privacy-content · .privacy-updated"]
-        C7["Components\n.btn-primary · .faq-item accordion\n.menu-cat-card · .menu-modal\n.menu-dish-price — class retained in CSS but no elements in HTML\n.reserve-btn (gold=WhatsApp · espresso=Zomato/Swiggy/EazyDiner)\n.sticky-mobile-cta (espresso bg · gold top border)\n  .smcta-call (cream text · SVG phone)\n  .smcta-wa (gold bg · espresso text · SVG WhatsApp)\n.menu-cta-strip\n.reviews-slider-wrap (overflow:hidden · position:relative — anchors GPU clip)\n.footer-amenities · .footer-amenity (flex + SVG icons)\n.footer-brand-social · .footer-credit\n.footer-hours · .footer-address\n.contact-icon (SVG 16px) · .exp-feature-icon (SVG in gold circle)"]
+        C7["Components\n.btn-primary · .faq-item accordion\n.menu-cat-card (3-up grid; 2-up + banner ≤1024; 1-up ≤768)\n.menu-modal (3 tabs; .mm-tab-pages hidden ≤600px so tabs fit)\n.menu-tag.egg — new July 2026, marks egg-containing dishes\n.menu-dish-price — class retained in CSS but no elements in HTML\n.reserve-btn (gold=WhatsApp · espresso=Zomato/Swiggy/EazyDiner)\n.sticky-mobile-cta (espresso bg · gold top border)\n  .smcta-call (cream text · SVG phone)\n  .smcta-wa (gold bg · espresso text · SVG WhatsApp)\n.menu-cta-strip\n.reviews-slider-wrap (overflow:hidden · position:relative — anchors GPU clip)\n.footer-amenities · .footer-amenity (flex + SVG icons)\n.footer-brand-social · .footer-credit\n.footer-hours · .footer-address\n.contact-icon (SVG 16px) · .exp-feature-icon (SVG in gold circle)"]
         C8["Responsive\n@media (max-width: 1024px) 2-col footer\n@media (max-width: 768px) brand full-width\nPages|Contact side-by-side · Hours full-width\nfooter pb: 5rem (clears sticky CTA bar)\nHero mobile: .hero-cta-group left:5vw bottom:10vh\n  (no dots on mobile — removed with night slide)\n@media (max-width: 600px) modal bottom-sheet\n.mm-img-wrap img: width 100% for portrait pages"]
     end
 
@@ -253,7 +257,7 @@ graph LR
         J4["Counter Animations\nHome stats\n(reviews · rating · tables)"]
         J5["Smooth Scroll\nSame-page anchor links\nbehavior: smooth"]
         J6["Reviews Slider\nAuto-advance 5s · dot nav · prev/next\ngetBoundingClientRect() for subpixel step\nstop() always called before start() (no stacked intervals)\nrequestAnimationFrame init (layout-ready guard)\n.reviews-slider-wrap: overflow:hidden + position:relative\n3-up desktop · 2-up tablet · 1-up mobile"]
-        J7["Menu Modal\nMENUS object: pages[] + spreads[][]\nisMobile() · getItems() · updateTabCounts()\nDesktop: 7 food spreads / 3 bev spreads\n  #mmImg (left) + #mmImgR (right) side-by-side\nMobile <768px: 12 food pages / 6 bev pages\n  #mmImg only · #mmImgR hidden\nresize listener rebuilds on breakpoint change\nAll assets from /img/menu-pages/ (no CDN)\nfood/bev tabs · prev/next · keyboard · swipe"]
+        J7["Menu Modal\nMENUS object: pages[] + spreads[][] · 3 sections\nisMobile() · getItems() · updateTabCounts()\n  (updateTabCounts now iterates MENUS keys —\n   id convention 'mmTab'+Capitalised(key))\nDesktop: 6 food / 4 bev / 2 dessert spreads\n  #mmImg (left) + #mmImgR (right) side-by-side\nMobile <768px: 11 food / 7 bev / 3 dessert pages\n  #mmImg only · #mmImgR hidden\nresize listener rebuilds on breakpoint change\nAll assets from /img/menu-pages/ (no CDN)\nfood/bev/dessert tabs · prev/next · keyboard · swipe"]
         J8["Mobile Hamburger\n#navHamburger toggle\naria-expanded"]
         J9["FAQ Accordion\n.faq-question click\nmax-height toggle"]
     end
@@ -267,7 +271,7 @@ graph LR
 graph TD
     subgraph SCHEMA["JSON-LD Schema per page"]
         SC1["index.html\nRestaurant schema\n(full NAP · hours · menu · geo)"]
-        SC2["menu/index.html\nMenu schema\n(hasMenuSection · offers with prices in JSON-LD only\n⚠ Visible prices removed from HTML May 2026)"]
+        SC2["menu/index.html\nMenu schema — rebuilt July 2026\n11 MenuSections · 71 MenuItems\n⚠ ALL price offers removed (July 2026):\nstale prices are worse than none, and the\ncustomer asked for prices off the site"]
         SC3["faq/index.html\nFAQPage schema\n(15 Q&A pairs)"]
         SC4["All subpages incl. privacy\nBreadcrumbList schema"]
         SC5["All pages footer\nOrganization schema\n(logo · contactPoint · sameAs)"]
@@ -320,3 +324,12 @@ graph LR
 | May 28 2026 | Fixed sitemap.xml — added trailing slash to all 5 subpage URLs (`/menu/`, `/visit/`, `/story/`, `/faq/`, `/privacy/`) | Apache `!-d` condition skips rewrite for real directories, causing 301 redirect on non-trailing-slash URLs; sitemap now points to final canonical URL — resolves GSC "Redirect error" |
 | May 28 2026 | Fixed sitemap-images.xml — same trailing slash fix on all 4 subpage `<loc>` entries; updated `/menu` hero caption from "vegetarian dishes" to "signature dishes" | Same redirect root cause; caption was stale copy from before May 23 vegetarian branding removal |
 | May 28 2026 | Added `llms.txt` at site root | AI visibility file (llmstxt.org spec) — gives ChatGPT, Claude, Perplexity, Gemini structured accurate info about the cafe for recommendation queries |
+| Jul 25 2026 | **Menu refresh from `OneTen Menu.pdf`** (24 pages, Canva, "OneTen Menu July"). Replaced all 18 `img/menu-pages/` assets with 21 new WebPs exported at 150 DPI (1241×1755, q82, 2.3 MB total) | New menu supplied by customer |
+| Jul 25 2026 | Added a **third "Desserts" tab** to the menu modal + a third gallery card. `MENUS` gains a `dessert` key; `updateTabCounts()` rewritten to iterate MENUS keys instead of hard-coding two element ids | PDF has three sections (Drinks p1–6, Food p7–16, Desserts p17–18); folding desserts into Food would have buried them |
+| Jul 25 2026 | Section posters kept as page 1 of each tab and given their own desktop spread; content pages pair two-up like an open book | Poster is a title page — pairing it with a content page looked wrong |
+| Jul 25 2026 | Gallery cards: page counts replaced with content descriptions | Cards showed desktop spread counts ("7 pages") while mobile showed 12 — the mismatch worsened with 3 sections. Tab labels already show a live count |
+| Jul 25 2026 | `.menu-cat-card-overlay` gradient strengthened; image `brightness` 0.55 → 0.78 | Cream menu pages left the "Browse inside" badge and category line on near-white |
+| Jul 25 2026 | `.mm-tab-pages` hidden ≤600px, tab padding/size reduced | Three tabs with counts overflowed a 375px phone; now 301px total, fits a 320px SE |
+| Jul 25 2026 | Text menu rewritten to 11 category blocks from the PDF; blanket "Veg" tags dropped, new `.menu-tag.egg` marks egg dishes | Old blanket "Veg" tags contradicted the FAQ ("menu includes Eggs and Dairy") |
+| Jul 25 2026 | Menu JSON-LD rebuilt: 11 sections / 71 items, **all price offers removed** | Old schema advertised removed dishes at stale prices (Zucchini Zingz ₹280 vs ₹390 now) |
+| Jul 25 2026 | Breakfast hours corrected sitewide (faq/index.html ×4, llms.txt ×5) from "8 AM–12 PM daily" to **Mon–Thu 8 AM–5 PM · Fri–Sun 8 AM–1 PM** | New PDF states the real service window; site contradicted the menu it was serving |

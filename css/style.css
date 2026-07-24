@@ -1143,6 +1143,7 @@ section { width: 100%; }
 .menu-tag.pop  { background: rgba(200,149,42,0.1); color: var(--gold-deep); border: 1px solid rgba(200,149,42,0.2); }
 .menu-tag.sig  { background: rgba(200,149,42,0.15); color: var(--gold); border: 1px solid rgba(200,149,42,0.3); }
 .menu-tag.jain { background: rgba(28,18,10,0.06); color: var(--espresso-3); border: 1px solid rgba(28,18,10,0.12); }
+.menu-tag.egg  { background: rgba(200,149,42,0.08); color: var(--gold-deep); border: 1px solid rgba(200,149,42,0.22); }
 .menu-dish-price {
   font-family: var(--font-sans);
   font-size: .92rem; font-weight: 500;
@@ -1492,7 +1493,7 @@ footer {
   color: var(--sand); max-width: 220px; text-align: right;
   line-height: 1.7; font-style: italic;
 }
-.menu-cat-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.menu-cat-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .menu-cat-card {
   position: relative; height: 460px;
   border-radius: 4px; overflow: hidden; cursor: pointer;
@@ -1501,15 +1502,24 @@ footer {
 .menu-cat-card:hover { transform: translateY(-4px); }
 .menu-cat-card img {
   width: 100%; height: 100%; object-fit: cover; object-position: top;
-  filter: brightness(0.55) saturate(0.7);
+  /* lifted from 0.55 — the gradient now carries text contrast, so the menu
+     page itself can stay legible in the preview */
+  filter: brightness(0.78) saturate(0.75);
   transition: transform 0.7s ease, filter 0.4s;
 }
-.menu-cat-card:hover img { transform: scale(1.04); filter: brightness(0.45) saturate(0.75); }
+.menu-cat-card:hover img { transform: scale(1.04); filter: brightness(0.66) saturate(0.8); }
 .menu-cat-card-overlay {
   position: absolute; inset: 0;
   display: flex; flex-direction: column; justify-content: flex-end;
   padding: 2.5rem 2.5rem 2.8rem;
-  background: linear-gradient(to top, rgba(28,18,10,0.85) 0%, rgba(28,18,10,0.1) 55%, transparent 100%);
+  /* Menu pages are cream and busy, so the old stop at 55% left the badge and
+     category line sitting on near-white. Dark band now covers the text zone
+     (bottom ~45%) and clears fast above it so the page stays readable. */
+  background: linear-gradient(to top,
+    rgba(28,18,10,0.95) 0%,
+    rgba(28,18,10,0.78) 28%,
+    rgba(28,18,10,0.48) 55%,
+    transparent 82%);
 }
 .menu-cat-badge {
   font-family: var(--font-sans); font-size: .58rem; font-weight: 600;
@@ -1713,6 +1723,9 @@ footer {
   .footer-amenities { flex-direction: row; flex-wrap: wrap; gap: .6rem 1rem; }
   .reviews-track .review-card { flex: 0 0 calc(50% - 1px); min-width: calc(50% - 1px); }
   .quick-facts dl { grid-template-columns: 130px 1fr; }
+  /* 3 menu cards don't fit 3-up here — third one spans the row as a wide banner */
+  .menu-cat-cards { grid-template-columns: 1fr 1fr; }
+  .menu-cat-card:nth-child(3) { grid-column: 1 / -1; height: 300px; }
 }
 
 @media (max-width: 768px) {
@@ -1748,6 +1761,8 @@ footer {
   .sticky-mobile-cta { display: flex; }
   .menu-cat-cards { grid-template-columns: 1fr; }
   .menu-cat-card { height: 320px; }
+  /* undo the 1024px banner span — single column here */
+  .menu-cat-card:nth-child(3) { grid-column: auto; height: 320px; }
   .mm-viewer { padding: .8rem .5rem; gap: .5rem; }
   .mm-arrow { width: 36px; height: 36px; font-size: .9rem; }
   .reviews-track .review-card { flex: 0 0 100%; min-width: 100%; }
@@ -1773,7 +1788,11 @@ footer {
   }
   .menu-modal.open .menu-modal-panel { transform: translateY(0); }
   .mm-header { padding: 1.2rem 1.4rem 0; }
-  .mm-tabs   { padding: .9rem 1.4rem .6rem; }
+  /* Three tabs don't fit at this width with their page counts — the
+     footer counter ("1 / 6") already reports position, so drop them. */
+  .mm-tabs   { padding: .9rem 1rem .6rem; gap: 2px; }
+  .mm-tab    { padding: 8px 12px; font-size: .62rem; letter-spacing: .08em; }
+  .mm-tab-pages { display: none; }
   .mm-footer { padding: .6rem 1.4rem 1.2rem; }
   .mm-viewer { position: relative; padding: .6rem 0; gap: 0; }
   .mm-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; width: 36px; height: 36px; background: rgba(12,8,4,0.65); border-color: rgba(200,149,42,0.3); }
