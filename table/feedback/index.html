@@ -15,7 +15,7 @@
   <link rel="manifest" href="/manifest.json?v=2611" />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/cormorant-garamond-500.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/jost-400.woff2" crossorigin />
-  <link rel="stylesheet" href="/css/table.css?v=2611e" />
+  <link rel="stylesheet" href="/css/table.css?v=2611h" />
 </head>
 <body class="tbl">
 
@@ -30,7 +30,6 @@
   </header>
 
   <main id="content">
-    <!-- DEMO: nothing stored — backend TBD -->
     <div id="fb-main">
       <div class="fb-intro">
         <h1>How did we do?</h1>
@@ -38,123 +37,16 @@
       </div>
 
       <form id="fb-form" novalidate>
-        <ul class="fb-list">
+        <!-- Honeypot: real guests never see or fill #fb-website; bots usually do. -->
+        <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label for="fb-website">Website</label><input id="fb-website" type="text" tabindex="-1" autocomplete="off" /></div>
 
-          <li class="fb-card">
-            <div class="fb-card-head">
-              <p class="fb-card-q">Food</p>
-              <span class="fb-score" aria-live="polite">&ndash;</span>
-            </div>
-            <div class="fb-meter" role="radiogroup" aria-label="Food" data-q="food">
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="1" tabindex="0">1</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="2" tabindex="-1">2</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="3" tabindex="-1">3</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="4" tabindex="-1">4</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="5" tabindex="-1">5</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="6" tabindex="-1">6</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="7" tabindex="-1">7</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="8" tabindex="-1">8</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="9" tabindex="-1">9</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="10" tabindex="-1">10</button>
-            </div>
-            <div class="fb-scale-ends" aria-hidden="true"><span>Lowest</span><span>Highest</span></div>
-          </li>
+        <!-- All questions render here from FEEDBACK.questions in js/table.js.
+             To change a question, edit that ONE config block — see _data/feedback/README.md. -->
+        <ul class="fb-list" id="fb-questions"></ul>
 
-          <li class="fb-card">
-            <div class="fb-card-head">
-              <p class="fb-card-q">Coffee &amp; drinks</p>
-              <span class="fb-score" aria-live="polite">&ndash;</span>
-            </div>
-            <div class="fb-meter" role="radiogroup" aria-label="Coffee and drinks" data-q="coffee">
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="1" tabindex="0">1</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="2" tabindex="-1">2</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="3" tabindex="-1">3</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="4" tabindex="-1">4</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="5" tabindex="-1">5</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="6" tabindex="-1">6</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="7" tabindex="-1">7</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="8" tabindex="-1">8</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="9" tabindex="-1">9</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="10" tabindex="-1">10</button>
-            </div>
-            <div class="fb-scale-ends" aria-hidden="true"><span>Lowest</span><span>Highest</span></div>
-          </li>
-
-          <li class="fb-card">
-            <div class="fb-card-head">
-              <p class="fb-card-q">Service</p>
-              <span class="fb-score" aria-live="polite">&ndash;</span>
-            </div>
-            <div class="fb-meter" role="radiogroup" aria-label="Service" data-q="service">
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="1" tabindex="0">1</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="2" tabindex="-1">2</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="3" tabindex="-1">3</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="4" tabindex="-1">4</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="5" tabindex="-1">5</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="6" tabindex="-1">6</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="7" tabindex="-1">7</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="8" tabindex="-1">8</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="9" tabindex="-1">9</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="10" tabindex="-1">10</button>
-            </div>
-            <div class="fb-scale-ends" aria-hidden="true"><span>Lowest</span><span>Highest</span></div>
-          </li>
-
-          <li class="fb-card">
-            <div class="fb-card-head">
-              <p class="fb-card-q">Ambience</p>
-              <span class="fb-score" aria-live="polite">&ndash;</span>
-            </div>
-            <div class="fb-meter" role="radiogroup" aria-label="Ambience" data-q="ambience">
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="1" tabindex="0">1</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="2" tabindex="-1">2</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="3" tabindex="-1">3</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="4" tabindex="-1">4</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="5" tabindex="-1">5</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="6" tabindex="-1">6</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="7" tabindex="-1">7</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="8" tabindex="-1">8</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="9" tabindex="-1">9</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="10" tabindex="-1">10</button>
-            </div>
-            <div class="fb-scale-ends" aria-hidden="true"><span>Lowest</span><span>Highest</span></div>
-          </li>
-
-          <li class="fb-card">
-            <div class="fb-card-head">
-              <p class="fb-card-q">Value for money</p>
-              <span class="fb-score" aria-live="polite">&ndash;</span>
-            </div>
-            <div class="fb-meter" role="radiogroup" aria-label="Value for money" data-q="value">
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="1" tabindex="0">1</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="2" tabindex="-1">2</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="3" tabindex="-1">3</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="4" tabindex="-1">4</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="5" tabindex="-1">5</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="6" tabindex="-1">6</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="7" tabindex="-1">7</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="8" tabindex="-1">8</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="9" tabindex="-1">9</button>
-              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="10" tabindex="-1">10</button>
-            </div>
-            <div class="fb-scale-ends" aria-hidden="true"><span>Lowest</span><span>Highest</span></div>
-          </li>
-
-        </ul>
-
-        <div class="fb-card fb-field">
-          <label for="fb-comment">Anything else you'd like to share? <span style="font-weight:400;color:var(--muted-on-cream)">(optional)</span></label>
-          <textarea id="fb-comment" rows="4" maxlength="1000" placeholder="Type here…"></textarea>
-        </div>
-
-        <div class="fb-card fb-field">
-          <label for="fb-phone">Your contact number <span style="font-weight:400;color:var(--muted-on-cream)">(optional)</span></label>
-          <div class="fb-phone-row">
-            <span class="fb-phone-prefix">+91</span>
-            <input id="fb-phone" type="tel" inputmode="numeric" autocomplete="tel-national" pattern="\d{10}" maxlength="10" placeholder="10-digit number" />
-          </div>
-          <p class="fb-error" id="fb-error" role="alert"></p>
-        </div>
+        <noscript>
+          <p class="fb-noscript">Leaving feedback needs JavaScript turned on. Please enable it, or ask our staff — we'd still love to hear from you.</p>
+        </noscript>
       </form>
     </div>
 
@@ -183,6 +75,6 @@
   </div>
 </div>
 
-<script src="/js/table.js?v=2611e" defer></script>
+<script src="/js/table.js?v=2611h" defer></script>
 </body>
 </html>

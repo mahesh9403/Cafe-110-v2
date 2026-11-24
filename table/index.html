@@ -15,7 +15,7 @@
   <link rel="manifest" href="/manifest.json?v=2611" />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/cormorant-garamond-500.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/jost-400.woff2" crossorigin />
-  <link rel="stylesheet" href="/css/table.css?v=2611e" />
+  <link rel="stylesheet" href="/css/table.css?v=2611h" />
 </head>
 <body class="tbl">
 
@@ -43,7 +43,7 @@
             </span>
             <span class="tbl-row-text">
               <span class="tbl-row-title">OneTen Recommendations</span>
-              <span class="tbl-row-sub">Five dishes we love right now</span>
+              <span class="tbl-row-sub" id="tbl-recs-sub">Five dishes we love right now</span>
             </span>
             <span class="tbl-row-arrow tbl-panel-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
           </summary>
@@ -52,23 +52,23 @@
                  carries the "Bestseller" chip. JS re-renders this on load. -->
             <ul class="tbl-recs" id="tbl-recs">
               <li class="tbl-rec">
-                <div class="tbl-rec-media"><span class="tbl-rec-chip">Bestseller</span><img src="/img/dishes/belgian-slice-cafe-oneten.webp?v=2611" alt="Belgian Slice" width="720" height="1280" decoding="async"></div>
+                <div class="tbl-rec-media"><span class="tbl-rec-chip">Bestseller</span><span class="tbl-rec-num" aria-label="1 of 5">1/5</span><img src="/img/dishes/belgian-slice-cafe-oneten.webp?v=2611" alt="Belgian Slice" width="720" height="1280" decoding="async"></div>
                 <div class="tbl-rec-body"><p class="tbl-rec-name">Belgian Slice</p></div>
               </li>
               <li class="tbl-rec">
-                <div class="tbl-rec-media"><span class="tbl-rec-chip">Bestseller</span><img src="/img/dishes/peri-peri-paneer-rice-bowl-cafe-oneten.webp?v=2611" alt="Peri Peri Paneer Rice Bowl" width="720" height="1280" loading="lazy" decoding="async"></div>
+                <div class="tbl-rec-media"><span class="tbl-rec-chip">Bestseller</span><span class="tbl-rec-num" aria-label="2 of 5">2/5</span><img src="/img/dishes/peri-peri-paneer-rice-bowl-cafe-oneten.webp?v=2611" alt="Peri Peri Paneer Rice Bowl" width="720" height="1280" loading="lazy" decoding="async"></div>
                 <div class="tbl-rec-body"><p class="tbl-rec-name">Peri Peri Paneer Rice Bowl</p></div>
               </li>
               <li class="tbl-rec">
-                <div class="tbl-rec-media"><span class="tbl-rec-chip">Bestseller</span><img src="/img/dishes/deconstructed-tiramisu-cafe-oneten.webp?v=2611" alt="Deconstructed Tiramisu" width="1084" height="1600" loading="lazy" decoding="async"></div>
+                <div class="tbl-rec-media"><span class="tbl-rec-chip">Bestseller</span><span class="tbl-rec-num" aria-label="3 of 5">3/5</span><img src="/img/dishes/deconstructed-tiramisu-cafe-oneten.webp?v=2611" alt="Deconstructed Tiramisu" width="1084" height="1600" loading="lazy" decoding="async"></div>
                 <div class="tbl-rec-body"><p class="tbl-rec-name">Deconstructed Tiramisu</p></div>
               </li>
               <li class="tbl-rec">
-                <div class="tbl-rec-media"><span class="tbl-rec-chip">Bestseller</span><img src="/img/dishes/french-toast-cafe-oneten.webp?v=2611" alt="French Toast" width="608" height="1080" loading="lazy" decoding="async"></div>
+                <div class="tbl-rec-media"><span class="tbl-rec-chip">Bestseller</span><span class="tbl-rec-num" aria-label="4 of 5">4/5</span><img src="/img/dishes/french-toast-cafe-oneten.webp?v=2611" alt="French Toast" width="608" height="1080" loading="lazy" decoding="async"></div>
                 <div class="tbl-rec-body"><p class="tbl-rec-name">French Toast</p></div>
               </li>
               <li class="tbl-rec">
-                <div class="tbl-rec-media"><span class="tbl-rec-chip">Bestseller</span><img src="/img/dishes/assorted-bread-basket-cafe-oneten.webp?v=2611" alt="Assorted Bread Basket" width="1280" height="720" loading="lazy" decoding="async"></div>
+                <div class="tbl-rec-media"><span class="tbl-rec-chip">Bestseller</span><span class="tbl-rec-num" aria-label="5 of 5">5/5</span><img src="/img/dishes/assorted-bread-basket-cafe-oneten.webp?v=2611" alt="Assorted Bread Basket" width="1280" height="720" loading="lazy" decoding="async"></div>
                 <div class="tbl-rec-body"><p class="tbl-rec-name">Assorted Bread Basket</p></div>
               </li>
             </ul>
@@ -247,6 +247,6 @@
   </ul>
 </nav>
 
-<script src="/js/table.js?v=2611e" defer></script>
+<script src="/js/table.js?v=2611h" defer></script>
 </body>
 </html>

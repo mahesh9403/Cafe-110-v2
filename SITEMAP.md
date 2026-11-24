@@ -1,5 +1,7 @@
 # Cafe OneTen — Codebase Sitemap & Architecture
 
+> New here? Start with [CODEBASE.md](CODEBASE.md) (overview, folder map, how-tos); this file holds the per-route detail.
+
 ## Site URL Structure
 
 | Route | File | Description |

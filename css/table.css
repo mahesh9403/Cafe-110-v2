@@ -1,3 +1,18 @@
+/* Self-hosted brand fonts (same files as style.css; table pages don't load style.css) */
+@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 300; font-display: swap; src: url('/fonts/cormorant-garamond-italic-300.woff2') format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 400; font-display: swap; src: url('/fonts/cormorant-garamond-italic-400.woff2') format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 300; font-display: swap; src: url('/fonts/cormorant-garamond-300.woff2') format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/cormorant-garamond-400.woff2') format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/cormorant-garamond-500.woff2') format('woff2'); }
+@font-face { font-family: 'Dancing Script'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/dancing-script-400.woff2') format('woff2'); }
+@font-face { font-family: 'Dancing Script'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/dancing-script-600.woff2') format('woff2'); }
+@font-face { font-family: 'Dancing Script'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/dancing-script-700.woff2') format('woff2'); }
+@font-face { font-family: 'Jost'; font-style: normal; font-weight: 200; font-display: swap; src: url('/fonts/jost-200.woff2') format('woff2'); }
+@font-face { font-family: 'Jost'; font-style: normal; font-weight: 300; font-display: swap; src: url('/fonts/jost-300.woff2') format('woff2'); }
+@font-face { font-family: 'Jost'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/jost-400.woff2') format('woff2'); }
+@font-face { font-family: 'Jost'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/jost-500.woff2') format('woff2'); }
+@font-face { font-family: 'Jost'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/jost-600.woff2') format('woff2'); }
+
 /* ============================================================================
    Cafe OneTen — "At your table" (guest QR pages)
    Loaded ONLY on /table/* pages. Does NOT load style.css, main.js, nav,
@@ -233,6 +248,19 @@ a { color: inherit; }
   height: 100%;
   object-fit: cover;
   display: block;
+}
+.tbl-rec-num {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  background: rgba(28, 18, 10, 0.72);
+  color: var(--cream);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 4px 8px;
+  border-radius: 999px;
 }
 .tbl-rec-chip {
   position: absolute;
@@ -549,13 +577,15 @@ a { color: inherit; }
   color: var(--muted-on-cream);
 }
 
-.fb-field { margin-top: 14px; }
+/* Field cards now sit in the #fb-questions grid, so its 14px gap spaces them. */
 .fb-field label {
   display: block;
   font-weight: 500;
   color: var(--espresso);
   margin-bottom: 8px;
 }
+/* Muted "(optional)"-style note after a field label. */
+.fb-opt { font-weight: 400; color: var(--muted-on-cream); }
 .fb-field textarea,
 .fb-field input {
   width: 100%;
@@ -585,6 +615,40 @@ a { color: inherit; }
 }
 .fb-phone-row input { flex: 1; min-width: 0; }
 .fb-error { color: var(--gold-deep); font-weight: 600; font-size: 0.85rem; margin-top: 8px; }
+
+/* Single-select choice pills (type:'choice' questions). */
+.fb-choice { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.fb-pill {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid rgba(28, 18, 10, 0.28);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--espresso);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.14s ease;
+}
+.fb-pill[aria-checked="true"] {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--espresso);
+  font-weight: 600;
+}
+.fb-pill:active { transform: scale(0.97); }
+
+/* Shown only when JavaScript is off (the page can't submit without it). */
+.fb-noscript {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--gold-line);
+  border-radius: var(--radius);
+  background: var(--card);
+  color: var(--muted-on-cream);
+  font-size: 0.92rem;
+}
 
 .fb-submitbar {
   position: fixed;
@@ -664,5 +728,5 @@ a { color: inherit; }
     transition: none !important;
     animation: none !important;
   }
-  .tbl-row:active, .fb-seg:active { transform: none; }
+  .tbl-row:active, .fb-seg:active, .fb-pill:active { transform: none; }
 }
