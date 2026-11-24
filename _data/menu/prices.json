@@ -1,0 +1,439 @@
+{
+  "as_of": "2026-11-14",
+  "source": "OneTen Menu November (printed menu)",
+  "currency": "INR",
+  "_meta": {
+    "note": "AI-only price list. Transcribed from 'OneTen Menu November.pdf' (14 Nov 2026). Prices are never shown on any HTML page. Names match menu-data.json where an item exists there. Section-level 'addons'/'note' describe choices that apply to every item in the section (bread upgrades, pizza/pasta bases and extras).",
+    "sections_order": ["food", "drinks", "desserts"]
+  },
+  "sections": [
+    {
+      "section": "Breakfast",
+      "items": [
+        { "name": "Pandan Kaya Toast", "price": 300 },
+        { "name": "Breakfast Wrap", "variants": [
+          { "label": "Falafel / Egg", "price": 380 },
+          { "label": "Paneer", "price": 400 },
+          { "label": "Mushroom", "price": 440 }
+        ] },
+        { "name": "Shakshouka", "price": 450 },
+        { "name": "Thick Toast", "variants": [
+          { "label": "Classic", "price": 450 },
+          { "label": "Cinnamon Banana", "price": 500 }
+        ] },
+        { "name": "French Toast", "variants": [
+          { "label": "Classic", "price": 400 },
+          { "label": "Nutella", "price": 450 }
+        ] },
+        { "name": "Pancakes", "variants": [
+          { "label": "Classic", "price": 430 },
+          { "label": "Berries", "price": 480 }
+        ] },
+        { "name": "Waffles", "variants": [
+          { "label": "Classic", "price": 430 },
+          { "label": "Avocado & Egg", "price": 480 },
+          { "label": "Berries", "price": 520 }
+        ] }
+      ]
+    },
+    {
+      "section": "Fresh Bread",
+      "items": [
+        { "name": "Egg & Toast", "price": 380 },
+        { "name": "Mushroom Toast", "price": 450, "addons": [
+          { "label": "Add choice of eggs", "price": 60 }
+        ] },
+        { "name": "Avocado Toast", "price": 450, "addons": [
+          { "label": "Add sunny side up", "price": 60 }
+        ] },
+        { "name": "Bread and Dip", "price": 400 },
+        { "name": "Assorted Bread Basket", "price": 590 }
+      ]
+    },
+    {
+      "section": "Soup",
+      "note": "Served half or full portion",
+      "items": [
+        { "name": "Caramelized Onion & Potato", "variants": [
+          { "label": "Half", "price": 230 }, { "label": "Full", "price": 330 }
+        ] },
+        { "name": "Harvest Pumpkin Soup", "variants": [
+          { "label": "Half", "price": 250 }, { "label": "Full", "price": 350 }
+        ] },
+        { "name": "Spicy Toscana", "variants": [
+          { "label": "Half", "price": 260 }, { "label": "Full", "price": 360 }
+        ] },
+        { "name": "Mushroom Soup", "variants": [
+          { "label": "Half", "price": 260 }, { "label": "Full", "price": 360 }
+        ] },
+        { "name": "Mushroom & Corn Chowder", "variants": [
+          { "label": "Half", "price": 260 }, { "label": "Full", "price": 360 }
+        ] },
+        { "name": "Tomato Bisque", "variants": [
+          { "label": "Half", "price": 260 }, { "label": "Full", "price": 360 }
+        ] }
+      ]
+    },
+    {
+      "section": "Salad",
+      "items": [
+        { "name": "Chickpea & Carrot", "price": 380 },
+        { "name": "Mediterranean Greek", "price": 400 }
+      ]
+    },
+    {
+      "section": "Small Plates",
+      "items": [
+        { "name": "Classic Fries", "variants": [
+          { "label": "Salted", "price": 330 },
+          { "label": "Peri Peri / Buldak", "price": 360 }
+        ] },
+        { "name": "Garlic Bread", "variants": [
+          { "label": "Regular", "price": 260 },
+          { "label": "Cheesy", "price": 300 }
+        ] },
+        { "name": "Corn Ribs", "price": 380 },
+        { "name": "Kare Pan", "price": 380 },
+        { "name": "Okra Chips", "price": 380 },
+        { "name": "Crispy Mushroom Chips", "price": 400 },
+        { "name": "Loaded Nachos", "price": 400 },
+        { "name": "Loaded Fries", "price": 400 },
+        { "name": "Spinach Artichoke & Chips", "price": 420 },
+        { "name": "Charred Corn & Chips", "price": 420 },
+        { "name": "Guac & Chips", "price": 420 },
+        { "name": "Cajun Paneer Skewers", "price": 420 },
+        { "name": "Zucchini Zings", "price": 480 },
+        { "name": "Mushroom Croquettes", "price": 460 },
+        { "name": "Avocado Croquettes", "price": 480 }
+      ]
+    },
+    {
+      "section": "Sandwich",
+      "note": "On milk bread; multigrain or croissant bread is an upgrade",
+      "addons": [
+        { "label": "Multigrain bread", "price": 50 },
+        { "label": "Croissant bread", "price": 50 }
+      ],
+      "items": [
+        { "name": "Egg Sandwich", "price": 450 },
+        { "name": "Creamy Mushroom", "price": 520 },
+        { "name": "Creamy Pesto", "price": 520 },
+        { "name": "Peri Peri Paneer", "price": 550 }
+      ]
+    },
+    {
+      "section": "Burger",
+      "items": [
+        { "name": "Crispy Paneer", "price": 550 },
+        { "name": "Truffle Mushroom", "price": 580 }
+      ]
+    },
+    {
+      "section": "Pizza",
+      "note": "Prices are for the thin crust base",
+      "addons": [
+        { "label": "Puff base", "price": 100 },
+        { "label": "00 Italian base", "price": 130 },
+        { "label": "Extra topping (mushroom, paneer, artichoke or pineapple)", "price": 80 },
+        { "label": "Extra cheese (mozzarella, cheddar or parmesan)", "price": 120 }
+      ],
+      "items": [
+        { "name": "Classic Margherita", "price": 580 },
+        { "name": "Farm Fresh Vege", "price": 600 },
+        { "name": "Roasted Paneer", "price": 650 },
+        { "name": "Artichoke & Spinach", "price": 680 },
+        { "name": "Spiced Pineapple & Mushroom", "price": 700 },
+        { "name": "Mushroom Arugula", "price": 700 },
+        { "name": "Four Cheese", "price": 730 }
+      ]
+    },
+    {
+      "section": "Pasta",
+      "note": "Choice of penne or spaghetti",
+      "addons": [
+        { "label": "Extra topping (mushroom, paneer, veggies or garlic bread)", "price": 80 },
+        { "label": "Extra cheese (mozzarella, cheddar or parmesan)", "price": 120 }
+      ],
+      "items": [
+        { "name": "Aglio e Olio", "price": 620 },
+        { "name": "Arrabbiata Blaze", "price": 620 },
+        { "name": "Mushroom Ravioli", "price": 650 },
+        { "name": "Baked Alfredo", "price": 600 },
+        { "name": "Baked Mushroom", "price": 680 },
+        { "name": "Creamy Cajun", "price": 680 },
+        { "name": "Buldak Alfredo", "price": 680 }
+      ]
+    },
+    {
+      "section": "Rice",
+      "note": "Choice of basmati or brown rice",
+      "items": [
+        { "name": "Avocado & Egg", "price": 700 },
+        { "name": "Coconut Mushroom Crème", "price": 720 },
+        { "name": "Peri Peri Paneer", "price": 750 },
+        { "name": "Cajun Paneer", "price": 750 }
+      ]
+    },
+    {
+      "section": "Last but not least",
+      "items": [
+        { "name": "Classic Hummus & Charred Broccoli", "price": 580 },
+        { "name": "Paneer Steak & Mash", "price": 650 }
+      ]
+    },
+
+    {
+      "section": "OneTen Specials",
+      "items": [
+        { "name": "Mont Blanc", "price": 400 },
+        { "name": "Pumpkin Spice", "price": 360 },
+        { "name": "Date Night", "price": 400 },
+        { "name": "Autumn Spice Delight", "price": 400 },
+        { "name": "Pistachio Latte", "price": 400 },
+        { "name": "Root Beer Float", "price": 400 },
+        { "name": "Coke Float", "price": 250 },
+        { "name": "Kombucha", "price": 220 },
+        { "name": "Cranberry Espresso", "price": 330 },
+        { "name": "Cranberry Soda Espresso", "price": 380 },
+        { "name": "Redbull Espresso", "price": 420 },
+        { "name": "V60", "price": 400 }
+      ]
+    },
+    {
+      "section": "Coffee",
+      "items": [
+        { "name": "Espresso & Doppio", "variants": [
+          { "label": "Espresso", "price": 150 },
+          { "label": "Doppio", "price": 200 }
+        ] },
+        { "name": "Cortado & Macchiato", "variants": [
+          { "label": "Cortado", "price": 220 },
+          { "label": "Macchiato", "price": 220 }
+        ] },
+        { "name": "Long Black & Americano", "variants": [
+          { "label": "Long Black", "price": 220 },
+          { "label": "Americano", "price": 220 }
+        ] },
+        { "name": "Cappuccino", "price": 280 },
+        { "name": "Flat White", "price": 280 },
+        { "name": "Turkish Coffee", "price": 350 }
+      ]
+    },
+    {
+      "section": "Latte",
+      "items": [
+        { "name": "Latte", "price": 300 },
+        { "name": "Toasted Sugar", "price": 340 },
+        { "name": "Spanish", "price": 340 },
+        { "name": "Vietnamese", "price": 340 },
+        { "name": "Salted Caramel", "price": 360 },
+        { "name": "Cinnamon", "price": 360 },
+        { "name": "Banana", "price": 360 },
+        { "name": "Pumpkin Spice", "price": 360 },
+        { "name": "Dark & White Chocolate Mocha", "variants": [
+          { "label": "Dark Chocolate", "price": 380 },
+          { "label": "White Chocolate", "price": 380 }
+        ] },
+        { "name": "Biscoff", "price": 400 },
+        { "name": "Pistachio", "price": 400 }
+      ]
+    },
+    {
+      "section": "Affogato",
+      "items": [
+        { "name": "Vanilla Affogato", "price": 250 },
+        { "name": "Chocolate Affogato", "price": 280 }
+      ]
+    },
+    {
+      "section": "Cold Brew",
+      "items": [
+        { "name": "Classic Cold Brew", "variants": [
+          { "label": "Classic", "price": 300 },
+          { "label": "Pineapple", "price": 330 },
+          { "label": "Watermelon", "price": 330 },
+          { "label": "Cranberry", "price": 330 },
+          { "label": "Orange Tonic", "price": 330 },
+          { "label": "Lemonade", "price": 350 },
+          { "label": "Orange", "price": 350 }
+        ] },
+        { "name": "Vanilla Cream", "price": 380 },
+        { "name": "Bubble Gum", "price": 380 },
+        { "name": "Biscoff Velvet", "price": 400 },
+        { "name": "Irish & Maple Velvet", "variants": [
+          { "label": "Irish Velvet", "price": 400 },
+          { "label": "Maple Velvet", "price": 400 }
+        ] }
+      ]
+    },
+    {
+      "section": "Crème Coffee",
+      "note": "Add-ons (oat milk, almond milk, caramel, vanilla or hazelnut) are not priced on the menu",
+      "items": [
+        { "name": "Peanut Butter Crème", "price": 370 },
+        { "name": "Caramel Crème", "price": 370 },
+        { "name": "Espresso Crème", "price": 380 },
+        { "name": "Hazelnut Crème", "price": 400 },
+        { "name": "Biscoff Crème", "price": 400 },
+        { "name": "Original Vanilla Crème", "price": 400 }
+      ]
+    },
+    {
+      "section": "Tea",
+      "items": [
+        { "name": "Earl Grey, Chamomile & Green", "price": 250 },
+        { "name": "Blue Pea Flower", "price": 250 },
+        { "name": "Honey Lemon", "price": 250 },
+        { "name": "Hibiscus Lemon", "price": 300 }
+      ]
+    },
+    {
+      "section": "Iced Tea",
+      "items": [
+        { "name": "Classic Iced Teas", "price": 300, "note": "Lemon, peach or passion fruit" },
+        { "name": "Hibiscus Iced Teas", "price": 300, "note": "Lemon, strawberry, blueberry, passion or peach" }
+      ]
+    },
+    {
+      "section": "Matcha",
+      "items": [
+        { "name": "Classic Matcha", "price": 350 },
+        { "name": "Cold Foam Matcha", "price": 380 },
+        { "name": "White Chocolate Matcha", "price": 400 },
+        { "name": "Banana Cold Foam Matcha", "price": 400 },
+        { "name": "Earl Grey & Strawberry Cloud", "variants": [
+          { "label": "Earl Grey Cloud", "price": 400 },
+          { "label": "Strawberry Cloud", "price": 400 }
+        ] }
+      ]
+    },
+    {
+      "section": "Hot Chocolate",
+      "items": [
+        { "name": "Classic Hot Chocolate", "price": 350, "note": "55% or 70% dark" },
+        { "name": "Nutella Hot Chocolate", "price": 350 },
+        { "name": "Mint Hot Chocolate", "price": 350 }
+      ]
+    },
+    {
+      "section": "Mojito",
+      "items": [
+        { "name": "Mojitos", "price": 300, "note": "Orange, cranberry, watermelon, lemon, blueberry, blackberry, strawberry or blue curaçao" }
+      ]
+    },
+    {
+      "section": "Milkshake",
+      "items": [
+        { "name": "Classic Milkshakes", "price": 380, "note": "Vanilla, banana, peanut butter, salted caramel or Oreo" },
+        { "name": "Indulgent Milkshakes", "variants": [
+          { "label": "Nutella", "price": 400 },
+          { "label": "Biscoff", "price": 400 },
+          { "label": "Dark Chocolate", "price": 430 },
+          { "label": "Ferrero Rocher", "price": 430 },
+          { "label": "Pistachio Cardamom", "price": 430 }
+        ] }
+      ]
+    },
+    {
+      "section": "Smoothies",
+      "items": [
+        { "name": "Fruit Smoothies", "price": 400, "note": "Strawberry, banana strawberry, blueberry or mulberry" }
+      ]
+    },
+    {
+      "section": "Fresh Juice",
+      "items": [
+        { "name": "Fresh Juices", "variants": [
+          { "label": "Pineapple", "price": 300 },
+          { "label": "Watermelon", "price": 350 },
+          { "label": "Orange", "price": 400 },
+          { "label": "Green Apple (Sour)", "price": 480 },
+          { "label": "Pomegranate", "price": 480 }
+        ] }
+      ]
+    },
+    {
+      "section": "Smoothie Bowls",
+      "items": [
+        { "name": "Chocolate Bowl", "price": 430 },
+        { "name": "Berry Bowl", "price": 450 },
+        { "name": "Avocado Honey Bowl", "price": 490 }
+      ]
+    },
+    {
+      "section": "Extras",
+      "note": "Bottled and canned drinks",
+      "items": [
+        { "name": "Water Bottle", "price": 120 },
+        { "name": "Coke", "price": 110 },
+        { "name": "Coke Zero", "price": 150 },
+        { "name": "Diet Coke", "price": 150 },
+        { "name": "Ginger Ale", "price": 150 },
+        { "name": "RedBull", "price": 250 },
+        { "name": "100 Plus", "price": 250, "note": "Malaysian soda" },
+        { "name": "Root Beer", "price": 350, "note": "A&W American soda" }
+      ]
+    },
+
+    {
+      "section": "Dessert Counter",
+      "items": [
+        { "name": "Double Choc Brookie", "price": 200 },
+        { "name": "Chocolate Cupcake", "price": 180 },
+        { "name": "Macaron", "variants": [
+          { "label": "White Chocolate Raspberry", "price": 110 },
+          { "label": "Chocolate", "price": 120 }
+        ] },
+        { "name": "Croissant", "price": 150 },
+        { "name": "Brownie", "price": 210 }
+      ]
+    },
+    {
+      "section": "Plated Desserts",
+      "items": [
+        { "name": "Banana Pudding", "price": 350 },
+        { "name": "Chocolate Mousse", "price": 400 },
+        { "name": "Deconstructed Cheesecake", "price": 400, "note": "Classic base", "addons": [
+          { "label": "Raspberry", "price": 50 },
+          { "label": "Blueberry", "price": 50 },
+          { "label": "Strawberry", "price": 50 },
+          { "label": "Nutella", "price": 80 },
+          { "label": "Dark Chocolate", "price": 80 }
+        ] },
+        { "name": "Belgian Slice", "price": 380 },
+        { "name": "Carrot Cake", "price": 400 },
+        { "name": "Crème Brûlée", "price": 350 },
+        { "name": "Deconstructed Tiramisu", "price": 400 },
+        { "name": "Milk Cake", "price": 400, "note": "Biscoff, Nutella or espresso" },
+        { "name": "Sizzling Brownie", "price": 400 },
+        { "name": "Choux Bun", "price": 400, "note": "Chocolate, vanilla or both" },
+        { "name": "Medovik", "price": 400 },
+        { "name": "Pistachio Raspberry", "price": 400 },
+        { "name": "Banana Slice", "price": 400 },
+        { "name": "Apple Cinnamon", "price": 400 },
+        { "name": "Lamington", "price": 400 }
+      ]
+    },
+    {
+      "section": "Cakes",
+      "note": "Celebration cakes ready in 45 minutes; cheesecakes are pre-order, price per kg",
+      "items": [
+        { "name": "Celebration Cakes", "note": "Fruit, white chocolate, milk chocolate, dark chocolate or Belgian chocolate", "variants": [
+          { "label": "½ kg", "price": 1200 },
+          { "label": "1 kg", "price": 2000 }
+        ] },
+        { "name": "Signature Cheesecakes", "note": "Pre-order, price per kg", "variants": [
+          { "label": "Classic Cheesecake", "price": 2000 },
+          { "label": "Tiramisu", "price": 2000 },
+          { "label": "Honey Medovik", "price": 2000 },
+          { "label": "Vanilla Biscoff", "price": 2200 },
+          { "label": "Opera", "price": 2200 },
+          { "label": "White Chocolate Blueberry", "price": 2200 },
+          { "label": "Chocolate Pistachio", "price": 2500 },
+          { "label": "Chocolate Hazelnut", "price": 2500 },
+          { "label": "Chocolate Espresso", "price": 2500 }
+        ] }
+      ]
+    }
+  ]
+}

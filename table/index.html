@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="text-scale" content="scale" />
+  <title>At Your Table — Cafe OneTen</title>
+  <meta name="description" content="Welcome to your table at Cafe OneTen — recommendations, Wi-Fi, menu, feedback and a quick game while you wait." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#1C120A" />
+  <meta name="format-detection" content="telephone=yes" />
+  <link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg?v=2611" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32.png?v=2611" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png?v=2611" />
+  <link rel="manifest" href="/manifest.json?v=2611" />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/cormorant-garamond-500.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/jost-400.woff2" crossorigin />
+  <link rel="stylesheet" href="/css/table.css?v=2611e" />
+</head>
+<body class="tbl">
+
+<div class="tbl-wrap">
+
+  <!-- SHARED TABLE HEADER (landing variant) — see css/table.css -->
+  <header class="tbl-header tbl-header--landing">
+    <a href="/" class="tbl-logo" aria-label="Cafe OneTen home">
+      <img src="/img/logo/oneten-white-logo.webp?v=2611" alt="Cafe OneTen" width="800" height="254" />
+    </a>
+    <p class="tbl-greeting" id="tbl-greeting">Welcome</p>
+  </header>
+
+  <main id="content">
+
+    <!-- Action rows -->
+    <h2 class="tbl-section-title">At your <span class="script">service</span></h2>
+    <ul class="tbl-rows">
+
+      <li>
+        <details class="tbl-panel">
+          <summary class="tbl-row">
+            <span class="tbl-tile" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13.9V20h12v-6.1"/><path d="M6 17h12"/><path d="M12 4a4 4 0 0 1 3.7 2.5A3.5 3.5 0 1 1 18 13.9H6a3.5 3.5 0 1 1 2.3-7.4A4 4 0 0 1 12 4z"/></svg>
+            </span>
+            <span class="tbl-row-text">
+              <span class="tbl-row-title">OneTen Recommendations</span>
+              <span class="tbl-row-sub">Five dishes we love right now</span>
+            </span>
+            <span class="tbl-row-arrow tbl-panel-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+          </summary>
+          <div class="tbl-panel-body">
+            <!-- Static markup mirrors js/table.js RECOMMENDATIONS exactly; every card
+                 carries the "Bestseller" chip. JS re-renders this on load. -->
+            <ul class="tbl-recs" id="tbl-recs">
+              <li class="tbl-rec">
+                <div class="tbl-rec-media"><span class="tbl-rec-chip">Bestseller</span><img src="/img/dishes/belgian-slice-cafe-oneten.webp?v=2611" alt="Belgian Slice" width="720" height="1280" decoding="async"></div>
+                <div class="tbl-rec-body"><p class="tbl-rec-name">Belgian Slice</p></div>
+              </li>
+              <li class="tbl-rec">
+                <div class="tbl-rec-media"><span class="tbl-rec-chip">Bestseller</span><img src="/img/dishes/peri-peri-paneer-rice-bowl-cafe-oneten.webp?v=2611" alt="Peri Peri Paneer Rice Bowl" width="720" height="1280" loading="lazy" decoding="async"></div>
+                <div class="tbl-rec-body"><p class="tbl-rec-name">Peri Peri Paneer Rice Bowl</p></div>
+              </li>
+              <li class="tbl-rec">
+                <div class="tbl-rec-media"><span class="tbl-rec-chip">Bestseller</span><img src="/img/dishes/deconstructed-tiramisu-cafe-oneten.webp?v=2611" alt="Deconstructed Tiramisu" width="1084" height="1600" loading="lazy" decoding="async"></div>
+                <div class="tbl-rec-body"><p class="tbl-rec-name">Deconstructed Tiramisu</p></div>
+              </li>
+              <li class="tbl-rec">
+                <div class="tbl-rec-media"><span class="tbl-rec-chip">Bestseller</span><img src="/img/dishes/french-toast-cafe-oneten.webp?v=2611" alt="French Toast" width="608" height="1080" loading="lazy" decoding="async"></div>
+                <div class="tbl-rec-body"><p class="tbl-rec-name">French Toast</p></div>
+              </li>
+              <li class="tbl-rec">
+                <div class="tbl-rec-media"><span class="tbl-rec-chip">Bestseller</span><img src="/img/dishes/assorted-bread-basket-cafe-oneten.webp?v=2611" alt="Assorted Bread Basket" width="1280" height="720" loading="lazy" decoding="async"></div>
+                <div class="tbl-rec-body"><p class="tbl-rec-name">Assorted Bread Basket</p></div>
+              </li>
+            </ul>
+          </div>
+        </details>
+      </li>
+
+      <li>
+        <a class="tbl-row" href="/table/feedback/">
+          <span class="tbl-tile" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg>
+          </span>
+          <span class="tbl-row-text">
+            <span class="tbl-row-title">Leave Anonymous Feedback</span>
+            <span class="tbl-row-sub">Takes under a minute</span>
+          </span>
+          <span class="tbl-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+        </a>
+      </li>
+
+      <li>
+        <a class="tbl-row" href="/menu/">
+          <span class="tbl-tile" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
+          </span>
+          <span class="tbl-row-text">
+            <span class="tbl-row-title">View Menu</span>
+            <span class="tbl-row-sub">Food, drinks and timings</span>
+          </span>
+          <span class="tbl-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+        </a>
+      </li>
+
+      <li>
+        <button class="tbl-row" type="button" id="wifi-open" aria-haspopup="dialog">
+          <span class="tbl-tile" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a10 10 0 0 1 14 0"/><path d="M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <span class="tbl-row-text">
+            <span class="tbl-row-title">Connect to Wi-Fi</span>
+            <span class="tbl-row-sub">Free for our guests</span>
+          </span>
+          <span class="tbl-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+        </button>
+      </li>
+
+      <li>
+        <a class="tbl-row" href="https://www.google.com/search?q=Cafe+OneTen#lrd=0x3bcb9322fdd55c69:0x943abc9a3b44ca2a,3" target="_blank" rel="noopener">
+          <span class="tbl-tile" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg>
+          </span>
+          <span class="tbl-row-text">
+            <span class="tbl-row-title">Leave a Google Review</span>
+            <span class="tbl-row-sub">Share your experience</span>
+          </span>
+          <span class="tbl-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          <span class="sr-only"> (opens in new tab)</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="tbl-row" href="/table/games/sudoku/">
+          <span class="tbl-tile" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
+          </span>
+          <span class="tbl-row-text">
+            <span class="tbl-row-title">Play Sudoku</span>
+            <span class="tbl-row-sub">While you wait</span>
+          </span>
+          <span class="tbl-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+        </a>
+      </li>
+
+      <li>
+        <a class="tbl-row" href="/table/games/tic-tac-toe/">
+          <span class="tbl-tile" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4v16M15 4v16M4 9h16M4 15h16"/></svg>
+          </span>
+          <span class="tbl-row-text">
+            <span class="tbl-row-title">Play Tic-Tac-Toe</span>
+            <span class="tbl-row-sub">While you wait</span>
+          </span>
+          <span class="tbl-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></span>
+        </a>
+      </li>
+
+      <li>
+        <a class="tbl-row" href="https://www.instagram.com/cafe.oneten/" target="_blank" rel="noopener">
+          <span class="tbl-tile" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <span class="tbl-row-text">
+            <span class="tbl-row-title">Follow us on Instagram</span>
+            <span class="tbl-row-sub">@cafe.oneten</span>
+          </span>
+          <span class="tbl-row-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          <span class="sr-only"> (opens in new tab)</span>
+        </a>
+      </li>
+
+    </ul>
+
+    <p class="tbl-foot">
+      <a href="/">Visit cafeoneten.com &rarr;</a>
+    </p>
+
+  </main>
+</div>
+
+<!-- Wi-Fi bottom sheet -->
+<dialog class="tbl-sheet" id="wifi-sheet" aria-labelledby="wifi-h">
+  <div class="tbl-sheet-inner">
+    <div class="tbl-sheet-head">
+      <h2 id="wifi-h">Connect to Wi-Fi</h2>
+      <button type="button" class="tbl-sheet-close" data-close aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+
+    <div class="tbl-copyfield">
+      <div class="cf-text">
+        <p class="cf-label">Network</p>
+        <p class="cf-value">CafeOneTen_Guest</p>
+      </div>
+      <button type="button" class="tbl-copybtn" data-copy="CafeOneTen_Guest" aria-label="Copy network name">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        <span class="cf-btn-label">Copy</span>
+      </button>
+    </div>
+
+    <div class="tbl-copyfield">
+      <div class="cf-text">
+        <p class="cf-label">Password</p>
+        <p class="cf-value">oneten@2025</p>
+      </div>
+      <button type="button" class="tbl-copybtn" data-copy="oneten@2025" aria-label="Copy password">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        <span class="cf-btn-label">Copy</span>
+      </button>
+    </div>
+
+    <ol class="tbl-sheet-steps">
+      <li>Open Wi-Fi settings on your phone.</li>
+      <li>Pick the network above and enter the password.</li>
+    </ol>
+  </div>
+</dialog>
+
+<!-- Sticky bottom bar -->
+<nav class="tbl-bar" aria-label="Quick actions">
+  <ul>
+    <li>
+      <a href="/menu/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
+        <span>Menu</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.google.com/search?q=Cafe+OneTen#lrd=0x3bcb9322fdd55c69:0x943abc9a3b44ca2a,3" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg>
+        <span>Review</span><span class="sr-only"> (opens in new tab)</span>
+      </a>
+    </li>
+    <li>
+      <a href="/table/games/sudoku/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        <span>Play</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://maps.app.goo.gl/hsdGhktTJDioT9mF8" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <span>Directions</span><span class="sr-only"> (opens in new tab)</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<script src="/js/table.js?v=2611e" defer></script>
+</body>
+</html>

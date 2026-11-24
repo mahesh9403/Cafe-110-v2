@@ -1,0 +1,410 @@
+/* ============================================================================
+   Cafe OneTen — table games (Sudoku + Tic-Tac-Toe)
+   Loaded ONLY on /table/games/* pages, AFTER css/table.css (which defines the
+   tokens --espresso*, --cream*, --gold*, --sand, fonts, .tbl-wrap, .tbl-header,
+   .tbl-back, .tbl-sheet* and .sr-only). This file adds only the game styles.
+   Mobile-first; the board fits at 320px with no horizontal scroll.
+   ============================================================================ */
+
+:root {
+  /* Error tint for a wrong Sudoku entry (no red token exists in the palette). */
+  --sdk-bad: #B4472B;
+  --cell-line: rgba(28, 18, 10, 0.16);
+  --cell-line-strong: rgba(28, 18, 10, 0.62);
+}
+
+/* ── HOW TO PLAY ── */
+.game-intro {
+  margin: 4px 0 18px;
+}
+.game-intro h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.7rem, 7vw, 2.2rem);
+  font-weight: 600;
+  color: var(--espresso);
+  line-height: 1.1;
+}
+.game-howto {
+  margin-top: 10px;
+  background: var(--card);
+  border: 1px solid var(--gold-line);
+  border-radius: 14px;
+  padding: 12px 14px;
+  box-shadow: var(--warm-shadow);
+}
+.game-howto summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--espresso);
+  list-style: none;
+}
+.game-howto summary::-webkit-details-marker { display: none; }
+.game-howto summary::after { content: " ▾"; color: var(--gold-deep); }
+.game-howto[open] summary::after { content: " ▴"; }
+.game-howto p {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--muted-on-cream);
+  line-height: 1.5;
+}
+
+/* ── CHIPS (difficulty / mode toggles) ── */
+.sdk-chips {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+}
+.sdk-chip {
+  flex: 1;
+  min-height: 44px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid var(--gold-line);
+  background: var(--card);
+  color: var(--espresso);
+  font: inherit;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: var(--warm-shadow);
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+.sdk-chip:hover { border-color: var(--gold); }
+.sdk-chip[aria-pressed="true"] {
+  background: var(--gold);
+  color: var(--espresso);
+  border-color: var(--gold);
+  font-weight: 600;
+}
+
+/* ── SUDOKU ── */
+.sdk-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+.sdk-timer {
+  min-width: 4.5rem;
+  text-align: right;
+  font-family: var(--font-script);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--gold-deep);
+  font-variant-numeric: tabular-nums;
+}
+
+.sdk-boardwrap {
+  position: relative;
+  margin-top: 14px;
+}
+.sdk-board {
+  display: grid;
+  grid-template-rows: repeat(9, 1fr);
+  width: min(520px, 100%);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  background: #fff;
+  border: 2.5px solid var(--espresso);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 14px 30px -18px rgba(0, 0, 0, 0.8);
+  user-select: none;
+}
+.sdk-row {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+}
+.sdk-cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0 solid var(--cell-line);
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  background: transparent;
+  color: var(--espresso);
+  font-family: var(--font-sans);
+  line-height: 1;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.12s ease;
+}
+.sdk-cell[data-br="true"] { border-right-width: 2.5px; border-right-color: var(--cell-line-strong); }
+.sdk-cell[data-bb="true"] { border-bottom-width: 2.5px; border-bottom-color: var(--cell-line-strong); }
+.sdk-cell[data-peer="true"] { background: rgba(212, 192, 154, 0.28); }
+.sdk-cell[data-same="true"] { background: rgba(200, 149, 42, 0.16); }
+.sdk-cell[data-conflict="true"] { background: rgba(180, 71, 43, 0.14); }
+.sdk-cell[data-hinted="true"] { background: rgba(200, 149, 42, 0.32); }
+.sdk-cell[data-sel="true"] {
+  background: rgba(200, 149, 42, 0.22);
+  box-shadow: inset 0 0 0 2px var(--gold);
+  z-index: 1;
+}
+.sdk-cell:focus-visible {
+  z-index: 2;
+  box-shadow: inset 0 0 0 3px var(--gold-light);
+}
+.sdk-val {
+  font-size: clamp(1.25rem, 6.4vw, 1.85rem);
+  font-weight: 600;
+  color: var(--gold-deep);
+}
+.sdk-cell[data-given="true"] .sdk-val { font-weight: 700; color: var(--espresso); }
+.sdk-cell[data-conflict="true"] .sdk-val { color: var(--sdk-bad); }
+.sdk-notes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+  color: var(--muted-on-cream);
+}
+.sdk-notes span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.5rem, 2.5vw, 0.72rem);
+  font-weight: 600;
+  line-height: 1;
+}
+.sdk-flag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 7px;
+  height: 7px;
+  background: var(--sdk-bad);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.sdk-board[data-flash] { }
+.sdk-boardwrap[data-won="true"] .sdk-board {
+  animation: sdk-winpulse 900ms ease-out 1;
+}
+@keyframes sdk-winpulse {
+  0%, 100% { box-shadow: 0 14px 30px -18px rgba(0,0,0,.8); }
+  40% { box-shadow: 0 0 0 4px var(--gold), 0 14px 30px -18px rgba(0,0,0,.8); }
+}
+
+.sdk-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--muted-on-cream);
+  font-variant-numeric: tabular-nums;
+}
+.sdk-stats strong { color: var(--espresso); }
+
+.sdk-tools {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+.sdk-tool {
+  flex: 1;
+  min-height: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  border-radius: 12px;
+  border: 1px solid var(--gold-line);
+  background: var(--card);
+  color: var(--espresso);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--warm-shadow);
+}
+.sdk-tool:not(:disabled):hover { border-color: var(--gold); }
+.sdk-tool svg { width: 22px; height: 22px; }
+.sdk-tool:disabled { opacity: 0.45; cursor: default; }
+.sdk-tool[data-on="true"] { background: var(--gold); border-color: var(--gold); }
+
+.sdk-pad {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+.sdk-key {
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--gold-line);
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--espresso);
+  font-family: var(--font-script);
+  cursor: pointer;
+  box-shadow: var(--warm-shadow);
+}
+.sdk-key:not(:disabled):hover { border-color: var(--gold); }
+.sdk-key[data-notes="true"] {
+  background: var(--sand);
+  border-color: var(--sand);
+  color: var(--espresso);
+}
+.sdk-key-digit { font-size: 1.75rem; font-weight: 700; line-height: 1; }
+.sdk-key-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 0.9rem;
+  margin-top: 2px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0.8;
+}
+.sdk-key-left svg { width: 14px; height: 14px; }
+.sdk-key:disabled { opacity: 0.5; cursor: default; }
+.sdk-key-erase {
+  gap: 2px;
+  background: var(--cream);
+  color: var(--espresso);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.sdk-key-erase svg { width: 22px; height: 22px; }
+
+.sdk-newrow {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+/* ── SHARED BUTTONS ── */
+.sdk-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 22px;
+  border: none;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+.sdk-btn-primary { background: var(--gold); color: var(--espresso); }
+.sdk-btn-secondary {
+  background: var(--cream);
+  color: var(--espresso);
+  border: 1px solid rgba(28, 18, 10, 0.18);
+}
+
+/* ── SHEET EXTRAS (built on .tbl-sheet / .tbl-sheet-inner) ── */
+.sdk-sheet-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--gold-deep);
+}
+.sdk-sheet-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-top: 4px;
+}
+.sdk-sheet-body {
+  margin-top: 8px;
+  color: var(--muted-on-cream);
+}
+.sdk-sheet-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+.sdk-sheet-actions .sdk-btn { width: 100%; }
+
+/* ── TIC-TAC-TOE ── */
+.ttt .ttt-diff { margin-top: 10px; }
+.ttt-status {
+  margin-top: 22px;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--espresso);
+  min-height: 1.6em;
+}
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: min(360px, 100%);
+  margin: 16px auto 0;
+}
+.ttt-cell {
+  aspect-ratio: 1;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1.5px solid rgba(28, 18, 10, 0.24);  /* espresso grid lines on white */
+  border-radius: 16px;
+  background: var(--card);
+  cursor: pointer;
+  box-shadow: var(--warm-shadow);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.ttt-cell[aria-disabled="true"] { cursor: default; }
+.ttt-cell:not([aria-disabled="true"]):hover { background: var(--cream); border-color: var(--gold); }
+.ttt-cell[data-inline="true"] {
+  background: rgba(200, 149, 42, 0.28);
+  border-color: var(--gold);
+}
+.ttt-glyph { width: 56px; height: 56px; }
+/* Glyph strokes are set in JS as --gold-light (X) / --sand (O); recolour them
+   here so both read on the white board (JS is out of scope). */
+.ttt-cell .ttt-glyph path { stroke: var(--gold-deep); }   /* X — warm gold */
+.ttt-cell .ttt-glyph circle { stroke: var(--espresso); }  /* O — dark */
+
+.ttt-score {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 24px;
+  list-style: none;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.ttt-score li {
+  padding: 8px 6px;
+  border-radius: 12px;
+  border: 1px solid var(--gold-line);
+  background: var(--card);
+  box-shadow: var(--warm-shadow);
+}
+.ttt-score-label {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--muted-on-cream);
+}
+.ttt-score strong {
+  font-size: 1.3rem;
+  color: var(--espresso);
+}
+
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  .sdk-cell, .sdk-chip, .ttt-cell { transition: none !important; }
+  .sdk-boardwrap[data-won="true"] .sdk-board { animation: none !important; }
+}

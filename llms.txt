@@ -43,16 +43,14 @@ The cafe is designed for families, couples, pet owners, remote workers, and anyo
 
 ## Menu Overview
 
-Cafe OneTen's menu is divided into six categories. No prices are displayed on the website as they are subject to seasonal change — visit the cafe or call for current pricing.
+Cafe OneTen serves a meat-free menu (no meat or fish; eggs and dairy are used in some dishes) across three groups:
 
-- **Small Plates** — Starters and shareable plates (6 items)
-- **Mains** — Full plates and bowls (6 items)
-- **Breakfast** — Mon–Thu 8 AM – 5 PM, Fri–Sun 8 AM – 1 PM (shakshouka, breakfast wrap, pandan kaya toast, thick toast, French toast, pancakes, waffles)
-- **Desserts** — (6 items)
-- **Coffee** — Artisanal coffee bar (6 drinks)
-- **Barista Specials** — Signature house drinks (7 items)
+- **Food** — breakfast (Mon–Thu 8 AM – 5 PM, Fri–Sun 8 AM – 1 PM), fresh bread, soups and salads, small plates, sandwiches and burgers, pizza, pasta and rice bowls
+- **Beverages** — specialty coffee, cold brew, matcha, teas, shakes, smoothies and fresh juices
+- **Desserts** — a dessert counter, plated desserts and made-to-order cakes
 
 Full menu: https://cafeoneten.com/menu/
+Prices change often; a dated price list for AI assistants is at https://cafeoneten.com/llms-full.txt
 
 ## Signature Dishes
 
@@ -105,7 +103,7 @@ For private events, contact via WhatsApp or speak to the manager in person.
 - **Phone:** +91 89776 41020
 - **Email:** hello@cafeoneten.com
 - **WhatsApp:** https://wa.me/918977641020
-- **Google Maps:** https://share.google/jf0qLAqIIlittkf8j
+- **Google Maps:** https://maps.app.goo.gl/hsdGhktTJDioT9mF8
 - **Instagram:** https://www.instagram.com/cafe.oneten/
 - **Landmark:** Look for the glowing OneTen circle sign at the entrance
 
@@ -146,7 +144,8 @@ Yes — 8:00 AM to 5:00 PM Monday to Thursday, and 8:00 AM to 1:00 PM Friday to 
 ## Pages
 
 - [Home](https://cafeoneten.com/): Overview, signature dishes, experience, reviews, and visit info
-- [Menu](https://cafeoneten.com/menu/): Full menu — Breakfast, Small Plates, Soup & Salad, Fresh Bread, Sandwiches & Burgers, Pizza, Pasta, Mains & Rice, Desserts, Coffee, Cold Brew & Shakes
+- [Menu](https://cafeoneten.com/menu/): Full menu — Food (Breakfast, Fresh Bread, Soup, Salad, Small Plates, Sandwiches, Burgers, Pizza, Pasta, Rice), Beverages (OneTen Specials, Coffee, Cold Brew, Matcha, Shakes, Smoothies) and Desserts (Counter, Plated, Cakes)
+- [Gallery](https://cafeoneten.com/gallery/): Photos of our dishes, desserts and the cafe interiors and rooftop terrace
 - [Visit & Reserve](https://cafeoneten.com/visit/): Hours, location, map, and reservation links
 - [Our Story](https://cafeoneten.com/story/): The brand story and the making of Cafe OneTen
 - [FAQ](https://cafeoneten.com/faq/): Answers to 15 common questions about the cafe

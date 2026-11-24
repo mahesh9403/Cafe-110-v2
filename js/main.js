@@ -234,49 +234,63 @@
   const MENUS = {
     food: {
       label: 'Food Menu',
-      // mobile: one portrait page at a time (11 total — section poster + 10 pages)
+      // mobile: one portrait page at a time (11 total); desktop: 7 spreads. ?v=2611 busts the cache for the Nov 2026 menu
       pages: [
-        '/img/menu-pages/food-1.webp',
-        '/img/menu-pages/food-2.webp',  '/img/menu-pages/food-3.webp',
-        '/img/menu-pages/food-4.webp',  '/img/menu-pages/food-5.webp',
-        '/img/menu-pages/food-6.webp',  '/img/menu-pages/food-7.webp',
-        '/img/menu-pages/food-8.webp',  '/img/menu-pages/food-9.webp',
-        '/img/menu-pages/food-10.webp', '/img/menu-pages/food-11.webp'
+        '/img/menu-pages/food-1.webp?v=2611',
+        '/img/menu-pages/food-2.webp?v=2611',
+        '/img/menu-pages/food-3.webp?v=2611',
+        '/img/menu-pages/food-4.webp?v=2611',
+        '/img/menu-pages/food-5.webp?v=2611',
+        '/img/menu-pages/food-6.webp?v=2611',
+        '/img/menu-pages/food-7.webp?v=2611',
+        '/img/menu-pages/food-8.webp?v=2611',
+        '/img/menu-pages/food-9.webp?v=2611',
+        '/img/menu-pages/food-10.webp?v=2611',
+        '/img/menu-pages/food-11.webp?v=2611'
       ],
-      // desktop: poster alone, then pages paired like an open book (6 total)
       spreads: [
-        ['/img/menu-pages/food-1.webp'],
-        ['/img/menu-pages/food-2.webp',  '/img/menu-pages/food-3.webp'],
-        ['/img/menu-pages/food-4.webp',  '/img/menu-pages/food-5.webp'],
-        ['/img/menu-pages/food-6.webp',  '/img/menu-pages/food-7.webp'],
-        ['/img/menu-pages/food-8.webp',  '/img/menu-pages/food-9.webp'],
-        ['/img/menu-pages/food-10.webp', '/img/menu-pages/food-11.webp']
+        ['/img/menu-pages/food-1.webp?v=2611'],
+        ['/img/menu-pages/food-2.webp?v=2611', '/img/menu-pages/food-3.webp?v=2611'],
+        // Fresh Bread closes the breakfast half alone, so the "Food" poster opens the next spread
+        ['/img/menu-pages/food-4.webp?v=2611'],
+        ['/img/menu-pages/food-5.webp?v=2611', '/img/menu-pages/food-6.webp?v=2611'],
+        ['/img/menu-pages/food-7.webp?v=2611', '/img/menu-pages/food-8.webp?v=2611'],
+        ['/img/menu-pages/food-9.webp?v=2611', '/img/menu-pages/food-10.webp?v=2611'],
+        ['/img/menu-pages/food-11.webp?v=2611']
       ]
     },
     bev: {
       label: 'Beverages',
+      // 5 pages; desktop: 3 spreads
       pages: [
-        '/img/menu-pages/bev-1.webp',
-        '/img/menu-pages/bev-2.webp', '/img/menu-pages/bev-3.webp',
-        '/img/menu-pages/bev-4.webp', '/img/menu-pages/bev-5.webp',
-        '/img/menu-pages/bev-6.webp', '/img/menu-pages/bev-7.webp'
+        '/img/menu-pages/bev-1.webp?v=2611',
+        '/img/menu-pages/bev-2.webp?v=2611',
+        '/img/menu-pages/bev-3.webp?v=2611',
+        '/img/menu-pages/bev-4.webp?v=2611',
+        '/img/menu-pages/bev-5.webp?v=2611'
       ],
       spreads: [
-        ['/img/menu-pages/bev-1.webp'],
-        ['/img/menu-pages/bev-2.webp', '/img/menu-pages/bev-3.webp'],
-        ['/img/menu-pages/bev-4.webp', '/img/menu-pages/bev-5.webp'],
-        ['/img/menu-pages/bev-6.webp', '/img/menu-pages/bev-7.webp']
+        ['/img/menu-pages/bev-1.webp?v=2611'],
+        ['/img/menu-pages/bev-2.webp?v=2611', '/img/menu-pages/bev-3.webp?v=2611'],
+        ['/img/menu-pages/bev-4.webp?v=2611', '/img/menu-pages/bev-5.webp?v=2611']
       ]
     },
     dessert: {
       label: 'Desserts',
+      // 6 pages; desktop: 4 spreads
       pages: [
-        '/img/menu-pages/dessert-1.webp',
-        '/img/menu-pages/dessert-2.webp', '/img/menu-pages/dessert-3.webp'
+        '/img/menu-pages/dessert-1.webp?v=2611',
+        '/img/menu-pages/dessert-2.webp?v=2611',
+        '/img/menu-pages/dessert-3.webp?v=2611',
+        '/img/menu-pages/dessert-4.webp?v=2611',
+        '/img/menu-pages/dessert-5.webp?v=2611',
+        '/img/menu-pages/dessert-6.webp?v=2611'
       ],
       spreads: [
-        ['/img/menu-pages/dessert-1.webp'],
-        ['/img/menu-pages/dessert-2.webp', '/img/menu-pages/dessert-3.webp']
+        ['/img/menu-pages/dessert-1.webp?v=2611'],
+        ['/img/menu-pages/dessert-2.webp?v=2611', '/img/menu-pages/dessert-3.webp?v=2611'],
+        ['/img/menu-pages/dessert-4.webp?v=2611', '/img/menu-pages/dessert-5.webp?v=2611'],
+        ['/img/menu-pages/dessert-6.webp?v=2611']
       ]
     }
   };

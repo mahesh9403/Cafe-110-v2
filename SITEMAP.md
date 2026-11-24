@@ -6,6 +6,7 @@
 |-------|------|-------------|
 | `/` | `index.html` | Home — single hero (day only, night removed May 2026), marquee, story (stats: 4.6★ · 220+ reviews · **2 floors** · ₹1,300), food (5 signature dish WebPs), menu gallery, experience, menu preview, reviews, visit. Hero images served as WebP with srcset from `img/heroes/`; preload hint in `<head>`. Logo: `img/logo/oneten-white-logo.webp`. `<title>` is just "Cafe OneTen". |
 | `/menu` | `menu/index.html` | "OneTen favourites" — 11 category blocks rebuilt from `OneTen Menu.pdf` (July 2026): Breakfast · Small Plates · Soup & Salad · Fresh Bread · Sandwiches & Burgers · Pizza · Pasta · Mains & Rice · Desserts · Coffee · Cold Brew, Matcha & Shakes. **No prices shown** (May 2026 customer decision). Egg-containing dishes tagged. Menu modal now has **3 tabs** (Food · Beverages · Desserts). |
+| `/gallery` | `gallery/index.html` | Photo gallery (Nov 2026): 6 on-menu dishes + 4 interior shots, All/Food/Desserts/Space filter, native `<dialog>` lightbox (`js/gallery.js`, styles `.gallery-*` in style.css). No prices. |
 | `/visit` | `visit/index.html` | Hours, map, reservation buttons. Amenities: Dog-friendly outdoor seating · Free Parking · Free Wi-Fi (wheelchair accessible removed). |
 | `/story` | `story/index.html` | Brand story, editorial narrative, The Space dark panel |
 | `/faq` | `faq/index.html` | 15 FAQ accordions (updated May 2026), FAQPage schema. Pure Veg answer: No (eggs & dairy served). |
@@ -47,7 +48,7 @@ graph TD
         STORY_IMG["story/\nstory-letter-card-cafe-oneten.jpg ← active letter card\nOurstory.avif (source, kept for reference)\ncafeoneten-exterior-1.png\ncafeoneten-exterior-2.png\nillustrated-logo-cafe-oneten.webp"]
         LOGO["logo/\noneten-white-logo.webp ← primary (800×254, cropped, no padding)\noneten-white-logo.png  ← fallback\n(White wordmark on transparent bg\nUsed in: nav .nav-logo img · footer .wordmark img\nNav display: 48px height · Footer display: 80px height)"]
         DISHES["dishes/\n5 local WebP signature dish images (updated May 2026)\ndeconstructed-tiramisu-cafe-oneten.webp  (1084×1600 portrait)\nassorted-bread-basket-cafe-oneten.webp   (1280×720 landscape)\nbelgian-slice-cafe-oneten.webp           (720×1280 portrait)\nfruit-cake-slice-cafe-oneten.webp        (804×1280 portrait)\nperi-peri-paneer-rice-bowl-cafe-oneten.webp (720×1280 portrait)"]
-        MENU_PAGES["menu-pages/ ← portrait pages (mobile + desktop spread source)\nRebuilt July 2026 from OneTen Menu.pdf @150 DPI → 1241×1755 WebP q82\nfood-1.webp … food-11.webp (poster + 10 pages)\nbev-1.webp … bev-7.webp (poster + 6 pages)\ndessert-1.webp … dessert-3.webp (poster + 2 pages)\n21 files · 2.3 MB total"]
+        MENU_PAGES["menu-pages/ ← portrait pages (mobile + desktop spread source)\nRebuilt Nov 2026 from OneTen Menu November.pdf @150 DPI → 1241×1755 WebP q82\nfood-1.webp … food-11.webp (poster + 10 pages)\nbev-1.webp … bev-5.webp (poster + 4 pages)\ndessert-1.webp … dessert-6.webp (poster + 5 pages)\n22 files · refs carry ?v=2611"]
         OG["og/\nog-cafe-oneten-1200x630.jpg\n(1200×630 — OG/Twitter Card image)"]
         FAV["favicon/\nfavicon.svg (embedded PNG, ~5.7KB)\nfavicon-32.png · favicon-192.png\nfavicon-512.png · apple-touch-icon.png\nAll: gold 'OneTen' wordmark on WHITE bg, rounded corners (~22% radius)\nSource: OneTen Gold Logo.webp (tight-cropped, square-padded via Python/PIL)"]
     end
@@ -129,7 +130,7 @@ graph LR
         H2["📢 Marquee\n(aria-hidden scrolling text)\nItems: Botanical Luxe · Nallagandla · Rooftop Dining · Artisanal Coffee · Est. November 2025 · 4.6 ★ on Google · Free Wi-Fi\n⚠ 'All Vegetarian' removed May 2026 — customer decision"]
         H3["📖 Story Section\n(001 / Our Story\nHeading: 'From the very beginning.'\nLetter-style narrative — no images\nSign-off: 'With love, OneTen'\nStat cards: 4.6★ · 220+ reviews · 2 floors of dining · ₹1,300 avg check)"]
         H5["🍽️ Food Section\n(002 / Signature Dishes — 5 local WebP cards from img/dishes/\nTagline: 'Seasonal Ingredients, Hygienically Handled and Plated.'\nCards: Deconstructed Tiramisu · Assorted Bread Basket\nBelgian Slice · Fruit Cake Slice · Peri Peri Paneer Rice Bowl)"]
-        H6["🖼️ Menu Gallery\n(2 image cards: Food + Bev, opens modal)"]
+        H6["🖼️ Menu Gallery\n(3 image cards: Food + Bev + Desserts, opens modal)"]
         H7["✨ Experience Section\n(003 / The Space\nHeading: 'Built from the ground up. Intentional corners all around.'\n4 images from img/interior/:\nmorning-exterior-cafe-oneten.png\ninterior-warm-ambient-cafe-oneten.webp\nrooftop-glass-terrace-cafe-oneten.webp\ninterior-spacious-dining-cafe-oneten.webp\n5 features with SVG icons in gold circles:\nLeaf · Lightbulb · Umbrella · Candle · Music note)"]
         H9["📋 Menu Preview\n(004 / Menu\nHeading: 'What we serve: Mindfully Sourced'\nSmall Plates · Mains · Desserts · Beverages\n4 items each — no badges)"]
         H10["⭐ Reviews Slider\n(8 Google reviews · 4.6★ · 220+ reviews\nauto-advance 5s · prev/next · dot nav\npause-on-hover/touch · loops back to start)"]
@@ -140,7 +141,7 @@ graph LR
     subgraph MENU_MAP["menu/index.html"]
         direction TB
         M1["🎬 Full-screen Hero\n(<picture> menu-hero-desktop.webp / menu-hero-mobile.webp\nUpdated May 2026 — new image, no vegetarian branding)"]
-        M2["🖼️ Menu Gallery Cards\n(Food Menu · Beverages — opens modal)"]
+        M2["🖼️ Menu Gallery Cards\n(Food Menu · Beverages · Desserts — opens modal)"]
         M3["📋 Full Menu Items\nHeading: 'OneTen favourites'\nTagline: 'Thoughtfully sourced. Jain and vegan options on request.'\nSmall Plates (6) · Mains (6) · Breakfast 8AM–12PM (7)\nDesserts (6) · Coffee (6) · Barista Specials (7)\n⚠ NO PRICES — removed May 2026 (customer decision: prices fluctuate)\nAll ₹ tags and PRICE_TBD placeholders removed"]
         M4["📞 CTA Strip"]
         M5["🦶 Footer\n(shared — see Home footer)"]
@@ -195,15 +196,15 @@ graph TD
         DETECT["isMobile()\nwindow.innerWidth < 768?"]
 
         subgraph DESKTOP["Desktop ≥ 768px"]
-            DT_FOOD["Food: 6 spreads (poster alone, then pairs)\n#mmImg (left page) + #mmImgR (right page)\nside-by-side in mm-img-wrap flex row"]
+            DT_FOOD["Food: 7 spreads (posters open each half)\n#mmImg (left page) + #mmImgR (right page)\nside-by-side in mm-img-wrap flex row"]
             DT_BEV["Beverages: 4 spreads"]
             DT_DES["Desserts: 2 spreads"]
         end
 
         subgraph MOBILE["Mobile < 768px"]
             MB_FOOD["Food: 11 portrait pages\n/img/menu-pages/food-*.webp\n(local, full-width)"]
-            MB_BEV["Beverages: 7 portrait pages\n/img/menu-pages/bev-*.webp"]
-            MB_DES["Desserts: 3 portrait pages\n/img/menu-pages/dessert-*.webp"]
+            MB_BEV["Beverages: 5 portrait pages\n/img/menu-pages/bev-*.webp"]
+            MB_DES["Desserts: 6 portrait pages\n/img/menu-pages/dessert-*.webp"]
         end
 
         OPEN --> DETECT
@@ -212,9 +213,9 @@ graph TD
     end
 
     subgraph MOBILE_IMGS["📁 img/menu-pages/"]
-        FM["food-1.webp (Food poster)\nfood-2 … food-11 (Breakfast ×2 · Fresh Bread · Soup+Salad\nSmall Plates ×2 · Sandwich+Burger · Pizza · Pasta · Main+Rice)\n(~77–154 KB each)"]
-        BM["bev-1.webp (Drinks poster)\nbev-2 … bev-7 (Coffee · Cold Brew+Crème · Speciality\nTea+Matcha · Juice+Mojito+Shakes · Smoothies+Extras)\n(~72–96 KB each)"]
-        DM["dessert-1.webp (Desserts poster)\ndessert-2 · dessert-3 (Plated Desserts)\n(~81–129 KB each)"]
+        FM["food-1.webp (Breakfast poster) · food-5.webp (Food poster)\nfood-2 … food-4 (Breakfast ×2 · Fresh Bread)\nfood-6 … food-11 (Soup+Salad · Small Plates · Sandwich+Burger · Pizza · Pasta · Rice)\n(~150–170 KB each; posters ~25 KB)"]
+        BM["bev-1.webp (Drinks poster)\nbev-2 … bev-5 (OneTen Specials · Coffee+Latte+Cold Brew+Crème\nTea+Iced Tea+Matcha+Hot Choc+Mojito+Shakes · Smoothies+Juice+Bowls+Extras)\n(~80–150 KB each)"]
+        DM["dessert-1.webp (Desserts poster)\ndessert-2 … dessert-6 (Dessert Counter · Plated ×3 · Cakes)\n(~60–110 KB each)"]
     end
 
     MB_FOOD --> FM
@@ -257,7 +258,7 @@ graph LR
         J4["Counter Animations\nHome stats\n(reviews · rating · tables)"]
         J5["Smooth Scroll\nSame-page anchor links\nbehavior: smooth"]
         J6["Reviews Slider\nAuto-advance 5s · dot nav · prev/next\ngetBoundingClientRect() for subpixel step\nstop() always called before start() (no stacked intervals)\nrequestAnimationFrame init (layout-ready guard)\n.reviews-slider-wrap: overflow:hidden + position:relative\n3-up desktop · 2-up tablet · 1-up mobile"]
-        J7["Menu Modal\nMENUS object: pages[] + spreads[][] · 3 sections\nisMobile() · getItems() · updateTabCounts()\n  (updateTabCounts now iterates MENUS keys —\n   id convention 'mmTab'+Capitalised(key))\nDesktop: 6 food / 4 bev / 2 dessert spreads\n  #mmImg (left) + #mmImgR (right) side-by-side\nMobile <768px: 11 food / 7 bev / 3 dessert pages\n  #mmImg only · #mmImgR hidden\nresize listener rebuilds on breakpoint change\nAll assets from /img/menu-pages/ (no CDN)\nfood/bev/dessert tabs · prev/next · keyboard · swipe"]
+        J7["Menu Modal\nMENUS object: pages[] + spreads[][] · 3 sections\nisMobile() · getItems() · updateTabCounts()\n  (updateTabCounts now iterates MENUS keys —\n   id convention 'mmTab'+Capitalised(key))\nDesktop: 6 food / 3 bev / 4 dessert spreads\n  #mmImg (left) + #mmImgR (right) side-by-side\nMobile <768px: 11 food / 5 bev / 6 dessert pages\n  #mmImg only · #mmImgR hidden\nresize listener rebuilds on breakpoint change\nAll assets from /img/menu-pages/ (no CDN)\nfood/bev/dessert tabs · prev/next · keyboard · swipe"]
         J8["Mobile Hamburger\n#navHamburger toggle\naria-expanded"]
         J9["FAQ Accordion\n.faq-question click\nmax-height toggle"]
     end
@@ -303,7 +304,7 @@ graph LR
     SITE -->|"Reservation"| EZD["EazyDiner"]
     SITE -->|"Map embed + link"| GMAP["Google Maps\nPlot 361, Nallagandla\nshare.google/jf0qLAqIIlittkf8j"]
     SITE -->|"Self-hosted fonts\n/fonts/ (13 woff2)"| FONTS["Dancing Script · Cormorant Garamond · Jost\n(no external font CDN)"]
-    SITE -->|"Menu modal pages\n(all breakpoints, local WebP)"| MPAGES["img/menu-pages/\n12 food + 6 bev portrait pages\nDesktop: paired into 7+3 spreads via JS\nMobile: single pages"]
+    SITE -->|"Menu modal pages\n(all breakpoints, local WebP)"| MPAGES["img/menu-pages/\n11 food + 5 bev + 6 dessert portrait pages\nDesktop: paired into 6+3+4 spreads via JS\nMobile: single pages"]
     SITE -->|"Social link (footer)"| IG["Instagram\ncafe.oneten"]
 ```
 
@@ -333,3 +334,5 @@ graph LR
 | Jul 25 2026 | Text menu rewritten to 11 category blocks from the PDF; blanket "Veg" tags dropped, new `.menu-tag.egg` marks egg dishes | Old blanket "Veg" tags contradicted the FAQ ("menu includes Eggs and Dairy") |
 | Jul 25 2026 | Menu JSON-LD rebuilt: 11 sections / 71 items, **all price offers removed** | Old schema advertised removed dishes at stale prices (Zucchini Zingz ₹280 vs ₹390 now) |
 | Jul 25 2026 | Breakfast hours corrected sitewide (faq/index.html ×4, llms.txt ×5) from "8 AM–12 PM daily" to **Mon–Thu 8 AM–5 PM · Fri–Sun 8 AM–1 PM** | New PDF states the real service window; site contradicted the menu it was serving |
+| Nov 24 2026 | **Menu refresh from `OneTen Menu November.pdf`** (26 pages, Canva, dated 14 Nov 2026). `img/menu-pages/` now holds food-1..11, bev-1..5, dessert-1..6 (22 WebPs); `bev-6/7` deleted. `MENUS` rebuilt (desktop 7/3/4 spreads, mobile 11/5/6 pages); every menu-image ref carries `?v=2611` | Filenames are reused, so the cache-buster stops returning visitors seeing July pages. Text menu (29 sections, 141 items) and Menu JSON-LD both generated from one data file; new `.menu-tag.nuts` / `.menu-tag.bestseller` and `.menu-category-sub` classes; dietary note now covers egg and nuts; gallery cards/home list/llms.txt refreshed |
+| Nov 24 2026 | Added `/gallery/` page + "Gallery" link (after Menu) in desktop nav, mobile menu and footer on all pages; registered in sitemap.xml, sitemap-images.xml, llms.txt. Fixed Instagram handle `instagram.com/cafeoneten` → `instagram.com/cafe.oneten` in faq + visit JSON-LD `sameAs`. `style.css` cache-buster `?v=2611b` → `?v=2611c` | Owner wants a public gallery; wrong handle on FAQ/Visit schema |

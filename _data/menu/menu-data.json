@@ -1,0 +1,339 @@
+{
+  "_meta": {
+    "source": "OneTen Menu November.pdf (14 Nov 2026)",
+    "tab_order": ["food", "drinks", "desserts"],
+    "tags_used": ["egg", "nuts", "bestseller"],
+    "notes": "Names are ASCII so they match byte-for-byte across HTML and JSON-LD (only & differs, which html-unescapes to &). No prices. Mushroom icon is NOT tagged (mushroom appears in dish names). Nuts tag follows the PDF nut icon OR an explicit nut in the description."
+  },
+  "sections": [
+    {
+      "section": "Breakfast",
+      "tab": "food",
+      "subtitle": "Mon-Thu 8 AM - 5 PM, Fri-Sun 8 AM - 1 PM",
+      "note": "Some dishes need 15 minutes",
+      "items": [
+        { "name": "Pandan Kaya Toast", "desc": "House-made Malaysian kaya - coconut jam flavoured with fresh pandan leaves - on salted butter bread", "tags": ["egg", "nuts"] },
+        { "name": "Breakfast Wrap", "desc": "Falafel with fluffy scrambled egg, spicy soft paneer or peri peri mushroom, and hummus in a warm flour tortilla", "tags": ["egg"] },
+        { "name": "Shakshouka", "desc": "Three eggs nestled and poached in a rich, spicy seasoned tomato sauce, served with fresh bread", "tags": ["egg", "bestseller"] },
+        { "name": "Thick Toast", "desc": "Our eggless alternative - butter-toasted milk bread with whipped cream and toasted nuts. Classic or cinnamon banana", "tags": ["nuts"] },
+        { "name": "French Toast", "desc": "Buttery brioche soaked in a vanilla-cinnamon egg custard, grilled golden, with whipped cream cheese and maple syrup. Classic or Nutella", "tags": ["egg", "nuts"] },
+        { "name": "Pancakes", "desc": "Light and fluffy, pan-grilled golden, with a whipped cream cheese dip and maple syrup. Classic or berries", "tags": ["egg"] },
+        { "name": "Waffles", "desc": "Light and crisp golden waffles with a whipped cream cheese dip and maple syrup. Classic, avocado and egg, or berries", "tags": ["egg"] }
+      ]
+    },
+    {
+      "section": "Fresh Bread",
+      "tab": "food",
+      "items": [
+        { "name": "Egg & Toast", "desc": "Choice of three eggs with warm toasted bread and sautéed veggies", "tags": ["egg"] },
+        { "name": "Mushroom Toast", "desc": "Sautéed mushrooms in herb butter and cream, topped with fresh tomatoes and feta, over toasted sourdough. Add a choice of eggs", "tags": ["nuts"] },
+        { "name": "Avocado Toast", "desc": "In-house zesty guacamole topped with feta, served warm over toasted sourdough. Add a sunny side up egg", "tags": [] },
+        { "name": "Bread and Dip", "desc": "Baguette and sourdough with olive feta, balsamic, buldak butter, lemon mustard and hot honey dips", "tags": [] },
+        { "name": "Assorted Bread Basket", "desc": "An assortment of breads with lemon mustard butter, buldak butter, charred corn dip and spinach artichoke dip", "tags": ["nuts"] }
+      ]
+    },
+    {
+      "section": "Soup",
+      "tab": "food",
+      "subtitle": "Half or full portion",
+      "items": [
+        { "name": "Caramelized Onion & Potato", "desc": "Our comforting soup of sweet caramelised onions and creamy potatoes", "tags": [] },
+        { "name": "Harvest Pumpkin Soup", "desc": "A warm, velvety autumn blend in a bowl that nourishes and rejuvenates", "tags": ["nuts", "bestseller"] },
+        { "name": "Spicy Toscana", "desc": "A gentle warmth that fills you with a hearty tex-mex kick", "tags": [] },
+        { "name": "Mushroom Soup", "desc": "A classic rich and creamy blend of fresh mushrooms seasoned with herbs", "tags": [] },
+        { "name": "Mushroom & Corn Chowder", "desc": "A classic rich and creamy blend of fresh mushrooms and charred corn", "tags": [] },
+        { "name": "Tomato Bisque", "desc": "Smooth and velvety cream of tomato", "tags": [] }
+      ]
+    },
+    {
+      "section": "Salad",
+      "tab": "food",
+      "items": [
+        { "name": "Chickpea & Carrot", "desc": "Chickpeas and tender roasted carrots tossed with fresh greens and a zesty dressing", "tags": ["bestseller"] },
+        { "name": "Mediterranean Greek", "desc": "A vibrant mix of fresh garden vegetables, olives and rich feta, drizzled with extra virgin olive oil", "tags": ["nuts"] }
+      ]
+    },
+    {
+      "section": "Small Plates",
+      "tab": "food",
+      "items": [
+        { "name": "Classic Fries", "desc": "Salted, peri peri or buldak", "tags": [] },
+        { "name": "Garlic Bread", "desc": "Regular or cheesy", "tags": [] },
+        { "name": "Corn Ribs", "desc": "Italian herb or Mexican", "tags": [] },
+        { "name": "Kare Pan", "desc": "Mushroom and veggie stuffed bread pocket", "tags": [] },
+        { "name": "Okra Chips", "desc": "Thinly sliced okra, seasoned and roasted to a crisp", "tags": [] },
+        { "name": "Crispy Mushroom Chips", "desc": "Crisp golden mushroom chips", "tags": [] },
+        { "name": "Loaded Nachos", "tags": [] },
+        { "name": "Loaded Fries", "tags": [] },
+        { "name": "Spinach Artichoke & Chips", "desc": "Creamy spinach artichoke dip with chips - salted, peri peri or buldak", "tags": [] },
+        { "name": "Charred Corn & Chips", "desc": "Charred corn dip with chips - salted, peri peri or buldak", "tags": [] },
+        { "name": "Guac & Chips", "desc": "In-house guacamole with chips - salted, peri peri or buldak", "tags": [] },
+        { "name": "Cajun Paneer Skewers", "desc": "Cajun-spiced paneer skewers", "tags": [] },
+        { "name": "Zucchini Zings", "desc": "Delicately breaded spiced zucchini, fried till crisp, with garlic aioli", "tags": ["bestseller"] },
+        { "name": "Mushroom Croquettes", "desc": "Caramelized mushrooms and melted cheese on a bed of spicy toscana gravy", "tags": [] },
+        { "name": "Avocado Croquettes", "desc": "Zesty avocado hand-rolled and fried golden, with garlic aioli", "tags": [] }
+      ]
+    },
+    {
+      "section": "Sandwich",
+      "tab": "food",
+      "subtitle": "Milk, multigrain or croissant bread",
+      "items": [
+        { "name": "Egg Sandwich", "desc": "Cold egg salad with fresh bread and a side of fries", "tags": ["egg"] },
+        { "name": "Creamy Mushroom", "desc": "Cold creamy sautéed mushrooms with fresh bread and a side of fries", "tags": [] },
+        { "name": "Creamy Pesto", "desc": "Creamy pesto and vegetables with fresh bread and a side of fries", "tags": ["nuts"] },
+        { "name": "Peri Peri Paneer", "desc": "Spicy peri peri paneer with fresh bread and a side of fries", "tags": [] }
+      ]
+    },
+    {
+      "section": "Burger",
+      "tab": "food",
+      "items": [
+        { "name": "Crispy Paneer", "desc": "House-made spiced paneer patties in our OneTen potato burger bun", "tags": [] },
+        { "name": "Truffle Mushroom", "desc": "House-made truffle-oil mushroom patties in our OneTen potato buns, with a side of fries", "tags": ["bestseller"] }
+      ]
+    },
+    {
+      "section": "Pizza",
+      "tab": "food",
+      "subtitle": "Thin crust, puff or 00 Italian base",
+      "note": "Puff and 00 Italian bases need 20 minutes",
+      "items": [
+        { "name": "Classic Margherita", "desc": "Mozzarella, tomatoes and basil", "tags": [] },
+        { "name": "Farm Fresh Vege", "desc": "Assorted veggies and fresh herbs", "tags": [] },
+        { "name": "Roasted Paneer", "desc": "Roasted paneer and fresh veggies", "tags": [] },
+        { "name": "Artichoke & Spinach", "desc": "Tender artichokes and fresh spinach", "tags": [] },
+        { "name": "Spiced Pineapple & Mushroom", "desc": "Spicy marinated pineapple and mushrooms", "tags": ["bestseller"] },
+        { "name": "Mushroom Arugula", "desc": "Mushrooms, arugula and truffle oil", "tags": [] },
+        { "name": "Four Cheese", "desc": "Mozzarella, feta, cheddar and parmesan", "tags": [] }
+      ]
+    },
+    {
+      "section": "Pasta",
+      "tab": "food",
+      "subtitle": "Penne or spaghetti",
+      "items": [
+        { "name": "Aglio e Olio", "desc": "Tossed in a simple garlic, olive oil and pepper - a classic", "tags": [] },
+        { "name": "Arrabbiata Blaze", "desc": "Tossed in a bold, spicy arrabbiata sauce with fresh tomatoes, garlic and chilli", "tags": [] },
+        { "name": "Mushroom Ravioli", "desc": "Truffle mushroom stuffed ravioli gently coated in a smooth pumpkin cream sauce", "tags": ["egg", "nuts"] },
+        { "name": "Baked Alfredo", "desc": "Velvety alfredo over al dente pasta and veggies, topped with a golden layer of baked cheese", "tags": [] },
+        { "name": "Baked Mushroom", "desc": "Spiced rich alfredo mushrooms over al dente pasta, topped with a golden layer of baked cheese", "tags": [] },
+        { "name": "Creamy Cajun", "desc": "Cajun-spiced mushrooms and broccoli tossed in a creamy sauce over al dente pasta", "tags": [] },
+        { "name": "Buldak Alfredo", "desc": "Velvety alfredo with spicy buldak over al dente pasta, with broccoli, mushrooms and cherry tomatoes", "tags": ["nuts", "bestseller"] }
+      ]
+    },
+    {
+      "section": "Rice",
+      "tab": "food",
+      "subtitle": "Basmati or brown rice",
+      "items": [
+        { "name": "Avocado & Egg", "desc": "Wholesome egg fried rice topped with creamy avocado and finished with a sunny side up", "tags": ["egg"] },
+        { "name": "Coconut Mushroom Crème", "desc": "Spicy rich coconut gravy with mushroom fried rice, topped with creamy mushrooms and coconut flakes", "tags": [] },
+        { "name": "Peri Peri Paneer", "desc": "Fragrant brown rice with fresh grated coconut and spicy bean gravy, topped with veg stir fry and peri peri paneer", "tags": [] },
+        { "name": "Cajun Paneer", "desc": "Spinach brown rice and creamy cajun gravy topped with cajun paneer, with a side of cucumber yogurt", "tags": ["bestseller"] }
+      ]
+    },
+    {
+      "section": "Last but not least",
+      "tab": "food",
+      "items": [
+        { "name": "Classic Hummus & Charred Broccoli", "desc": "Creamy classic hummus topped with smoky, charred peri peri broccoli, with a side of warm pita bread", "tags": [] },
+        { "name": "Paneer Steak & Mash", "desc": "Paneer steaks and creamy mashed potato with a rich mushroom gravy and grilled veggies", "tags": [] }
+      ]
+    },
+
+    {
+      "section": "OneTen Specials",
+      "tab": "drinks",
+      "items": [
+        { "name": "Mont Blanc", "desc": "Cold brew, orange, vanilla and nutmeg", "tags": [] },
+        { "name": "Pumpkin Spice", "desc": "Espresso, pumpkin spice, caramel and vanilla", "tags": [] },
+        { "name": "Date Night", "desc": "Espresso, dates, vanilla and oat milk", "tags": ["bestseller"] },
+        { "name": "Autumn Spice Delight", "desc": "Espresso, cinnamon, caramel and brown sugar", "tags": [] },
+        { "name": "Pistachio Latte", "desc": "Pistachio and espresso, hot or cold", "tags": ["nuts"] },
+        { "name": "Root Beer Float", "desc": "Root beer and vanilla ice cream", "tags": [] },
+        { "name": "Cranberry Espresso", "desc": "Espresso over cranberry, iced", "tags": [] },
+        { "name": "Redbull Espresso", "desc": "Espresso over Red Bull, iced", "tags": [] },
+        { "name": "Kombucha", "desc": "Ask for the day's different flavours", "tags": [] },
+        { "name": "V60", "desc": "Hand-poured filter coffee, hot or cold", "tags": [] }
+      ]
+    },
+    {
+      "section": "Coffee",
+      "tab": "drinks",
+      "items": [
+        { "name": "Espresso & Doppio", "desc": "Our single or double shot", "tags": [] },
+        { "name": "Cortado & Macchiato", "desc": "Espresso cut with a little steamed milk", "tags": [] },
+        { "name": "Long Black & Americano", "desc": "Espresso over hot water, hot or cold", "tags": [] },
+        { "name": "Cappuccino", "desc": "Classic espresso and steamed milk, hot or cold", "tags": [] },
+        { "name": "Flat White", "desc": "Velvety espresso and steamed milk", "tags": [] },
+        { "name": "Turkish Coffee", "desc": "Traditionally brewed and served", "tags": [] }
+      ]
+    },
+    {
+      "section": "Latte",
+      "tab": "drinks",
+      "items": [
+        { "name": "Toasted Sugar", "desc": "Our house latte with a deep toasted-sugar sweetness", "tags": [] },
+        { "name": "Spanish", "desc": "Espresso with sweetened condensed milk", "tags": [] },
+        { "name": "Vietnamese", "desc": "Strong and rich, hot or cold", "tags": [] },
+        { "name": "Salted Caramel", "desc": "Espresso, steamed milk and salted caramel", "tags": [] },
+        { "name": "Dark & White Chocolate Mocha", "desc": "Espresso and steamed milk with dark or white chocolate", "tags": [] },
+        { "name": "Biscoff", "desc": "Espresso, steamed milk and Biscoff", "tags": [] },
+        { "name": "Pistachio", "desc": "Espresso, steamed milk and pistachio", "tags": ["nuts"] }
+      ]
+    },
+    {
+      "section": "Affogato",
+      "tab": "drinks",
+      "items": [
+        { "name": "Vanilla Affogato", "desc": "A shot of espresso over vanilla ice cream", "tags": [] },
+        { "name": "Chocolate Affogato", "desc": "A shot of espresso over chocolate ice cream", "tags": [] }
+      ]
+    },
+    {
+      "section": "Cold Brew",
+      "tab": "drinks",
+      "items": [
+        { "name": "Classic Cold Brew", "desc": "Slow-steeped and smooth. Also pineapple, watermelon, cranberry, orange tonic, lemonade and orange", "tags": [] },
+        { "name": "Vanilla Cream", "desc": "Cold brew with vanilla cream", "tags": [] },
+        { "name": "Bubble Gum", "desc": "A sweet, playful cold brew", "tags": [] },
+        { "name": "Biscoff Velvet", "desc": "Cold brew with Biscoff cream", "tags": [] },
+        { "name": "Irish & Maple Velvet", "desc": "Cold brew with Irish cream or maple", "tags": [] }
+      ]
+    },
+    {
+      "section": "Crème Coffee",
+      "tab": "drinks",
+      "note": "Add oat or almond milk; caramel, vanilla or hazelnut syrup",
+      "items": [
+        { "name": "Peanut Butter Crème", "desc": "Our ice-cream-based cold coffee with peanut butter", "tags": ["nuts"] },
+        { "name": "Caramel Crème", "desc": "Our ice-cream-based cold coffee with caramel", "tags": [] },
+        { "name": "Espresso Crème", "desc": "Our ice-cream-based cold coffee with an extra shot", "tags": [] },
+        { "name": "Hazelnut Crème", "desc": "Our ice-cream-based cold coffee with hazelnut", "tags": ["nuts"] },
+        { "name": "Biscoff Crème", "desc": "Our ice-cream-based cold coffee with Biscoff", "tags": [] },
+        { "name": "Original Vanilla Crème", "desc": "Our classic ice-cream-based cold coffee", "tags": [] }
+      ]
+    },
+    {
+      "section": "Tea",
+      "tab": "drinks",
+      "items": [
+        { "name": "Earl Grey, Chamomile & Green", "desc": "Classic loose-leaf teas", "tags": [] },
+        { "name": "Blue Pea Flower", "desc": "A vivid blue herbal tea", "tags": [] },
+        { "name": "Honey Lemon", "desc": "Soothing honey and lemon", "tags": [] },
+        { "name": "Hibiscus Lemon", "desc": "Tart hibiscus with lemon", "tags": [] }
+      ]
+    },
+    {
+      "section": "Iced Tea",
+      "tab": "drinks",
+      "items": [
+        { "name": "Classic Iced Teas", "desc": "Lemon, peach or passion fruit", "tags": [] },
+        { "name": "Hibiscus Iced Teas", "desc": "Lemon, strawberry, blueberry, passion or peach", "tags": [] }
+      ]
+    },
+    {
+      "section": "Matcha",
+      "tab": "drinks",
+      "items": [
+        { "name": "Classic Matcha", "desc": "Ceremonial matcha with water or milk, hot or cold", "tags": [] },
+        { "name": "Cold Foam Matcha", "desc": "Matcha under a silky cold foam", "tags": [] },
+        { "name": "White Chocolate Matcha", "desc": "Matcha with white chocolate", "tags": [] },
+        { "name": "Banana Cold Foam Matcha", "desc": "Matcha under a banana cold foam", "tags": [] },
+        { "name": "Earl Grey & Strawberry Cloud", "desc": "Matcha clouds in earl grey or strawberry", "tags": [] }
+      ]
+    },
+    {
+      "section": "Hot Chocolate",
+      "tab": "drinks",
+      "items": [
+        { "name": "Classic Hot Chocolate", "desc": "55% or 70% dark, hot and rich", "tags": [] },
+        { "name": "Nutella Hot Chocolate", "desc": "Hot chocolate with Nutella", "tags": ["nuts"] },
+        { "name": "Mint Hot Chocolate", "desc": "Hot chocolate with a cool mint finish", "tags": [] }
+      ]
+    },
+    {
+      "section": "Mojito",
+      "tab": "drinks",
+      "items": [
+        { "name": "Mojitos", "desc": "Orange, cranberry, watermelon, lemon, blueberry, blackberry, strawberry or blue curaçao", "tags": [] }
+      ]
+    },
+    {
+      "section": "Milkshake",
+      "tab": "drinks",
+      "items": [
+        { "name": "Classic Milkshakes", "desc": "Vanilla, banana, peanut butter, salted caramel or Oreo", "tags": ["nuts"] },
+        { "name": "Indulgent Milkshakes", "desc": "Nutella, Biscoff, dark chocolate, Ferrero Rocher or pistachio cardamom", "tags": ["nuts"] }
+      ]
+    },
+    {
+      "section": "Smoothies",
+      "tab": "drinks",
+      "items": [
+        { "name": "Fruit Smoothies", "desc": "Strawberry, banana strawberry, blueberry or mulberry", "tags": [] }
+      ]
+    },
+    {
+      "section": "Fresh Juice",
+      "tab": "drinks",
+      "items": [
+        { "name": "Fresh Juices", "desc": "Pineapple, watermelon, orange, sour green apple or pomegranate", "tags": [] }
+      ]
+    },
+    {
+      "section": "Smoothie Bowls",
+      "tab": "drinks",
+      "items": [
+        { "name": "Chocolate Bowl", "desc": "A thick chocolate smoothie bowl", "tags": [] },
+        { "name": "Berry Bowl", "desc": "A thick mixed-berry smoothie bowl", "tags": [] },
+        { "name": "Avocado Honey Bowl", "desc": "An avocado and honey smoothie bowl", "tags": [] }
+      ]
+    },
+
+    {
+      "section": "Dessert Counter",
+      "tab": "desserts",
+      "note": "From our counter, ready to go",
+      "items": [
+        { "name": "Double Choc Brookie", "desc": "A fudgy brownie and cookie hybrid", "tags": [] },
+        { "name": "Chocolate Cupcake", "desc": "A rich chocolate cupcake", "tags": [] },
+        { "name": "Macaron", "desc": "Delicate almond macarons - white chocolate raspberry or chocolate", "tags": ["nuts"] },
+        { "name": "Croissant", "desc": "Buttery, flaky croissant", "tags": [] },
+        { "name": "Brownie", "desc": "A rich, fudgy chocolate brownie", "tags": [] }
+      ]
+    },
+    {
+      "section": "Plated Desserts",
+      "tab": "desserts",
+      "note": "Some plated desserts need 15 minutes",
+      "items": [
+        { "name": "Banana Pudding", "desc": "Layers of creamy banana custard, fresh banana slices and crunchy biscuits", "tags": [] },
+        { "name": "Chocolate Mousse", "desc": "White, milk and dark chocolate mousse layers topped with toasted rice krispies", "tags": [] },
+        { "name": "Deconstructed Cheesecake", "desc": "Rich velvety no-bake cheesecake with a buttery biscuit crumble - classic, raspberry, blueberry, strawberry, Nutella or dark chocolate", "tags": ["nuts"] },
+        { "name": "Belgian Slice", "desc": "Moist chocolate cake layers with creamy chocolate mousse and a hot chocolate ganache drizzle", "tags": ["bestseller"] },
+        { "name": "Carrot Cake", "desc": "A tender two-layer cake with freshly grated carrots and crushed walnuts, perfectly spiced and finished with house-made cream cheese frosting", "tags": ["nuts"] },
+        { "name": "Crème Brûlée", "desc": "Thick and velvety vanilla custard under a burnt-sugar crust", "tags": [] },
+        { "name": "Deconstructed Tiramisu", "desc": "Savoiardi biscuits soaked in espresso with dollops of whipped mascarpone, dusted with cocoa", "tags": [] },
+        { "name": "Milk Cake", "desc": "Light, airy sponge drenched in three milks, layered with velvety cream - Biscoff, Nutella or espresso", "tags": ["nuts"] },
+        { "name": "Sizzling Brownie", "desc": "Warm fudgy chocolate nut brownie on a sizzler with in-house chocolate drizzle and a scoop of vanilla ice cream", "tags": ["nuts"] },
+        { "name": "Choux Bun", "desc": "A crisp French choux shell filled with silky crème - chocolate, vanilla or both", "tags": [] },
+        { "name": "Medovik", "desc": "A multi-layered Russian honey cake with tart raspberry compote and a scoop of vanilla ice cream", "tags": [] },
+        { "name": "Pistachio Raspberry", "desc": "Layers of pistachio sponge and cream with raspberry compote and a dark chocolate pour", "tags": ["nuts"] },
+        { "name": "Banana Slice", "desc": "Our banana bread with banana cream custard", "tags": [] },
+        { "name": "Apple Cinnamon", "desc": "Cinnamon-spiced apple bread with apple cream cheese frosting", "tags": [] },
+        { "name": "Lamington", "desc": "Chocolate-dipped sponge with a raspberry filling, coated in coconut", "tags": [] }
+      ]
+    },
+    {
+      "section": "Cakes",
+      "tab": "desserts",
+      "note": "Made fresh to order, ready in 45 minutes. Cheesecakes are pre-order - we customise any cake, just ask",
+      "items": [
+        { "name": "Celebration Cakes", "desc": "Fruit, white chocolate, milk chocolate, dark chocolate or Belgian chocolate - half kg or 1 kg", "tags": [] },
+        { "name": "Signature Cheesecakes", "desc": "Classic, Vanilla Biscoff, Chocolate Pistachio, Tiramisu, Opera, Chocolate Hazelnut, Honey Medovik, White Chocolate Blueberry or Chocolate Espresso", "tags": ["nuts"] }
+      ]
+    }
+  ]
+}

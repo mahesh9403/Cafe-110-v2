@@ -31,3 +31,12 @@ viewer images in `img/menu-pages/` were produced from it at 150 DPI:
 pdftoppm -r 150 -f N -l N -png -singlefile 'OneTen Menu.pdf' out
 # then: PIL save as WEBP, quality=82, method=6  ->  1241x1755
 ```
+
+## Menu hero posters (November edition)
+
+| File | Detail |
+|---|---|
+| `OneTen Menu Refresh_ Warm Café Tabletop.png` | 1672x941 desktop poster. Served as `img/heroes/menu-hero-nov-desktop.webp` (`cwebp -q 82`). |
+| `Nallagandla Menu Refresh Poster.png` | 851x1847 mobile poster. Served as `img/heroes/menu-hero-nov-mobile.webp` (`cwebp -q 82`). |
+
+The previous `menu-hero-desktop.webp` / `menu-hero-mobile.webp` are kept in `img/heroes/` for reverting.

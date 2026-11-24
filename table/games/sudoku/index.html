@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="text-scale" content="scale" />
+  <title>Sudoku — Cafe OneTen</title>
+  <meta name="description" content="Play Sudoku at your table at Cafe OneTen while you wait." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#1C120A" />
+  <meta name="format-detection" content="telephone=yes" />
+  <link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/cormorant-garamond-500.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/jost-400.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/dancing-script-700.woff2" crossorigin />
+  <link rel="stylesheet" href="/css/table.css?v=2611e" />
+  <link rel="stylesheet" href="/css/games.css?v=2611e" />
+</head>
+<body class="tbl">
+
+<div class="tbl-wrap">
+
+  <!-- SHARED TABLE HEADER (sub-page variant) — see css/table.css -->
+  <header class="tbl-header">
+    <a href="/" class="tbl-logo" aria-label="Cafe OneTen home">
+      <img src="/img/logo/oneten-white-logo.webp?v=2611" alt="Cafe OneTen" width="800" height="254" />
+    </a>
+    <a class="tbl-back" href="/table/">&larr; Back</a>
+  </header>
+
+  <main id="content">
+    <div class="game-intro">
+      <h1>Sudoku</h1>
+      <details class="game-howto">
+        <summary>How to play</summary>
+        <p>Fill every row, column and 3&times;3 box with the digits 1 to 9, with no repeats. Tap a cell, then tap a number. Use Notes to pencil in options, Hint to reveal one square, and Undo to step back. Three levels: Easy, Medium and Hard.</p>
+      </details>
+    </div>
+
+    <section id="sudoku-root" aria-label="Sudoku game">
+      <noscript>
+        <p style="margin-top:12px;padding:14px;border-radius:12px;background:var(--espresso-2);color:var(--cream);">Sudoku needs JavaScript. Please turn it on to play.</p>
+      </noscript>
+    </section>
+  </main>
+
+</div>
+
+<script type="module">
+  import { mountSudoku } from '/js/games/sudoku-ui.js?v=2611';
+  mountSudoku(document.getElementById('sudoku-root'));
+</script>
+
+</body>
+</html>

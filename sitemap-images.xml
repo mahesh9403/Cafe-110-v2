@@ -12,9 +12,62 @@
   <url>
     <loc>https://cafeoneten.com/menu/</loc>
     <image:image>
-      <image:loc>https://cafeoneten.com/img/heroes/menu-hero-desktop.webp</image:loc>
-      <image:caption>Cafe OneTen menu hero — signature dishes, Nallagandla Hyderabad</image:caption>
-      <image:title>Cafe OneTen Menu Hero</image:title>
+      <image:loc>https://cafeoneten.com/img/heroes/menu-hero-nov-desktop.webp?v=2611</image:loc>
+      <image:caption>Cafe OneTen November menu refresh poster — Our menu, refreshed, Nallagandla Hyderabad</image:caption>
+      <image:title>Cafe OneTen Menu Refresh, November Edition</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://cafeoneten.com/gallery/</loc>
+    <image:image>
+      <image:loc>https://cafeoneten.com/img/dishes/assorted-bread-basket-cafe-oneten.webp</image:loc>
+      <image:caption>A basket of freshly baked assorted breads at Cafe OneTen</image:caption>
+      <image:title>Assorted Bread Basket</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cafeoneten.com/img/dishes/belgian-slice-cafe-oneten.webp</image:loc>
+      <image:caption>A slice of Belgian chocolate dessert on a plate at Cafe OneTen</image:caption>
+      <image:title>Belgian Slice</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cafeoneten.com/img/dishes/peri-peri-paneer-rice-bowl-cafe-oneten.webp</image:loc>
+      <image:caption>A peri peri paneer rice bowl at Cafe OneTen</image:caption>
+      <image:title>Peri Peri Paneer Rice Bowl</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cafeoneten.com/img/interior/rooftop-glass-terrace-cafe-oneten.webp</image:loc>
+      <image:caption>The glass-roofed rooftop terrace at Cafe OneTen, surrounded by plants</image:caption>
+      <image:title>Rooftop glass terrace</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cafeoneten.com/img/dishes/deconstructed-tiramisu-cafe-oneten.webp</image:loc>
+      <image:caption>A plated deconstructed tiramisu at Cafe OneTen</image:caption>
+      <image:title>Deconstructed Tiramisu</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cafeoneten.com/img/dishes/french-toast-cafe-oneten.webp</image:loc>
+      <image:caption>French toast served at Cafe OneTen</image:caption>
+      <image:title>French Toast</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cafeoneten.com/img/interior/interior-warm-ambient-cafe-oneten.webp</image:loc>
+      <image:caption>Warm ambient dining interior with pendant lamps at Cafe OneTen</image:caption>
+      <image:title>Warm, ambient interiors</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cafeoneten.com/img/dishes/paneer-spinach-pizza-cafe-oneten.webp</image:loc>
+      <image:caption>A freshly baked pizza at Cafe OneTen</image:caption>
+      <image:title>Pizza</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cafeoneten.com/img/interior/interior-spacious-dining-cafe-oneten.webp</image:loc>
+      <image:caption>The spacious indoor dining floor at Cafe OneTen</image:caption>
+      <image:title>Spacious indoor dining</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://cafeoneten.com/img/interior/morning-exterior-cafe-oneten.webp</image:loc>
+      <image:caption>The exterior and entrance of Cafe OneTen on a morning in Nallagandla</image:caption>
+      <image:title>Morning at the entrance</image:title>
     </image:image>
   </url>
   <url>

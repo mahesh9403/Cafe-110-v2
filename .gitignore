@@ -5,7 +5,9 @@
 # Menu source artwork — 41 MB Canva export, converted to img/menu-pages/*.webp.
 # The site never loads the PDF itself, so keep it out of history.
 OneTen Menu.pdf
+OneTen Menu November.pdf
 
 # Google Search Console exports — regenerated on every check, not site code
 cafeoneten.com-Coverage-*/
 Google Search Console/
+.playwright-cli/

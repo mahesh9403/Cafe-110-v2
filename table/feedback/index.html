@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="text-scale" content="scale" />
+  <title>Anonymous Feedback — Cafe OneTen</title>
+  <meta name="description" content="Tell us how we did at Cafe OneTen. Anonymous and takes under a minute." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#1C120A" />
+  <meta name="format-detection" content="telephone=yes" />
+  <link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg?v=2611" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32.png?v=2611" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png?v=2611" />
+  <link rel="manifest" href="/manifest.json?v=2611" />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/cormorant-garamond-500.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/jost-400.woff2" crossorigin />
+  <link rel="stylesheet" href="/css/table.css?v=2611e" />
+</head>
+<body class="tbl">
+
+<div class="tbl-wrap">
+
+  <!-- SHARED TABLE HEADER (sub-page variant) — see css/table.css -->
+  <header class="tbl-header">
+    <a href="/" class="tbl-logo" aria-label="Cafe OneTen home">
+      <img src="/img/logo/oneten-white-logo.webp?v=2611" alt="Cafe OneTen" width="800" height="254" />
+    </a>
+    <a class="tbl-back" href="/table/">&larr; Back</a>
+  </header>
+
+  <main id="content">
+    <!-- DEMO: nothing stored — backend TBD -->
+    <div id="fb-main">
+      <div class="fb-intro">
+        <h1>How did we do?</h1>
+        <p>Anonymous and takes under a minute. 1 is lowest, 10 is highest.</p>
+      </div>
+
+      <form id="fb-form" novalidate>
+        <ul class="fb-list">
+
+          <li class="fb-card">
+            <div class="fb-card-head">
+              <p class="fb-card-q">Food</p>
+              <span class="fb-score" aria-live="polite">&ndash;</span>
+            </div>
+            <div class="fb-meter" role="radiogroup" aria-label="Food" data-q="food">
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="1" tabindex="0">1</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="2" tabindex="-1">2</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="3" tabindex="-1">3</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="4" tabindex="-1">4</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="5" tabindex="-1">5</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="6" tabindex="-1">6</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="7" tabindex="-1">7</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="8" tabindex="-1">8</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="9" tabindex="-1">9</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="10" tabindex="-1">10</button>
+            </div>
+            <div class="fb-scale-ends" aria-hidden="true"><span>Lowest</span><span>Highest</span></div>
+          </li>
+
+          <li class="fb-card">
+            <div class="fb-card-head">
+              <p class="fb-card-q">Coffee &amp; drinks</p>
+              <span class="fb-score" aria-live="polite">&ndash;</span>
+            </div>
+            <div class="fb-meter" role="radiogroup" aria-label="Coffee and drinks" data-q="coffee">
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="1" tabindex="0">1</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="2" tabindex="-1">2</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="3" tabindex="-1">3</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="4" tabindex="-1">4</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="5" tabindex="-1">5</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="6" tabindex="-1">6</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="7" tabindex="-1">7</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="8" tabindex="-1">8</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="9" tabindex="-1">9</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="10" tabindex="-1">10</button>
+            </div>
+            <div class="fb-scale-ends" aria-hidden="true"><span>Lowest</span><span>Highest</span></div>
+          </li>
+
+          <li class="fb-card">
+            <div class="fb-card-head">
+              <p class="fb-card-q">Service</p>
+              <span class="fb-score" aria-live="polite">&ndash;</span>
+            </div>
+            <div class="fb-meter" role="radiogroup" aria-label="Service" data-q="service">
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="1" tabindex="0">1</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="2" tabindex="-1">2</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="3" tabindex="-1">3</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="4" tabindex="-1">4</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="5" tabindex="-1">5</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="6" tabindex="-1">6</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="7" tabindex="-1">7</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="8" tabindex="-1">8</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="9" tabindex="-1">9</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="10" tabindex="-1">10</button>
+            </div>
+            <div class="fb-scale-ends" aria-hidden="true"><span>Lowest</span><span>Highest</span></div>
+          </li>
+
+          <li class="fb-card">
+            <div class="fb-card-head">
+              <p class="fb-card-q">Ambience</p>
+              <span class="fb-score" aria-live="polite">&ndash;</span>
+            </div>
+            <div class="fb-meter" role="radiogroup" aria-label="Ambience" data-q="ambience">
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="1" tabindex="0">1</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="2" tabindex="-1">2</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="3" tabindex="-1">3</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="4" tabindex="-1">4</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="5" tabindex="-1">5</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="6" tabindex="-1">6</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="7" tabindex="-1">7</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="8" tabindex="-1">8</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="9" tabindex="-1">9</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="10" tabindex="-1">10</button>
+            </div>
+            <div class="fb-scale-ends" aria-hidden="true"><span>Lowest</span><span>Highest</span></div>
+          </li>
+
+          <li class="fb-card">
+            <div class="fb-card-head">
+              <p class="fb-card-q">Value for money</p>
+              <span class="fb-score" aria-live="polite">&ndash;</span>
+            </div>
+            <div class="fb-meter" role="radiogroup" aria-label="Value for money" data-q="value">
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="1" tabindex="0">1</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="2" tabindex="-1">2</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="3" tabindex="-1">3</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="4" tabindex="-1">4</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="5" tabindex="-1">5</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="6" tabindex="-1">6</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="7" tabindex="-1">7</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="8" tabindex="-1">8</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="9" tabindex="-1">9</button>
+              <button type="button" class="fb-seg" role="radio" aria-checked="false" aria-label="10" tabindex="-1">10</button>
+            </div>
+            <div class="fb-scale-ends" aria-hidden="true"><span>Lowest</span><span>Highest</span></div>
+          </li>
+
+        </ul>
+
+        <div class="fb-card fb-field">
+          <label for="fb-comment">Anything else you'd like to share? <span style="font-weight:400;color:var(--muted-on-cream)">(optional)</span></label>
+          <textarea id="fb-comment" rows="4" maxlength="1000" placeholder="Type here…"></textarea>
+        </div>
+
+        <div class="fb-card fb-field">
+          <label for="fb-phone">Your contact number <span style="font-weight:400;color:var(--muted-on-cream)">(optional)</span></label>
+          <div class="fb-phone-row">
+            <span class="fb-phone-prefix">+91</span>
+            <input id="fb-phone" type="tel" inputmode="numeric" autocomplete="tel-national" pattern="\d{10}" maxlength="10" placeholder="10-digit number" />
+          </div>
+          <p class="fb-error" id="fb-error" role="alert"></p>
+        </div>
+      </form>
+    </div>
+
+    <!-- Thank-you screen -->
+    <div class="fb-thanks" id="fb-thanks" hidden>
+      <svg class="ring" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="40" cy="40" r="30" />
+        <path d="m27 41 9 9 18-20" />
+      </svg>
+      <h1 tabindex="-1">Thank you!</h1>
+      <p>Your feedback helps us serve you better. We hope to see you again soon.</p>
+      <a class="back-btn" href="/table/">Back to your table</a>
+    </div>
+
+  </main>
+</div>
+
+<!-- Sticky submit bar -->
+<div class="fb-submitbar" id="fb-submitbar">
+  <div class="inner">
+    <p class="fb-count" id="fb-count" aria-live="polite">0 of 5 rated</p>
+    <button type="submit" form="fb-form" class="fb-submit" id="fb-submit" disabled>
+      Submit
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>
+    </button>
+  </div>
+</div>
+
+<script src="/js/table.js?v=2611e" defer></script>
+</body>
+</html>
