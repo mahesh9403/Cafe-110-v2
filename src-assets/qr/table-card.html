@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>OneTen table QR card</title>
+<!--
+  Printable table card for the /table/ QR page.
+  Open via the local server (fonts load from /fonts/):
+    http://localhost:8110/src-assets/qr/table-card.html          -> one A6 card
+    http://localhost:8110/src-assets/qr/table-card.html?sheet=a4 -> A4 sheet, 4 cards + cut lines
+  PDFs are exported to src-assets/qr/print/.
+-->
+<style>
+@font-face{font-family:'Cormorant Garamond';font-weight:500;src:url('/fonts/cormorant-garamond-500.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;src:url('/fonts/cormorant-garamond-italic-400.woff2') format('woff2')}
+@font-face{font-family:'Dancing Script';font-weight:700;src:url('/fonts/dancing-script-700.woff2') format('woff2')}
+@font-face{font-family:'Jost';font-weight:400;src:url('/fonts/jost-400.woff2') format('woff2')}
+@font-face{font-family:'Jost';font-weight:500;src:url('/fonts/jost-500.woff2') format('woff2')}
+
+:root{--espresso:#1C120A;--espresso-2:#2A1A0E;--gold:#C8952A;--gold-light:#E8B84B;--cream:#F7F2E6}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+/* one card = A6 portrait */
+.card{width:105mm;height:148mm;background:var(--espresso);color:var(--cream);
+  display:flex;flex-direction:column;align-items:center;padding:9mm 8mm 7mm;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;inset:3.5mm;border:.35mm solid var(--gold);border-radius:2mm;pointer-events:none}
+.logo{width:46mm;height:auto}
+.welcome{font-family:'Dancing Script',cursive;font-weight:700;color:var(--gold-light);font-size:21pt;line-height:1;margin-top:4mm}
+.qr-wrap{background:var(--cream);border-radius:3mm;padding:2.5mm;margin-top:4mm;box-shadow:0 0 0 .6mm var(--gold)}
+.qr-wrap img{display:block;width:52mm;height:52mm}
+.scan{font-family:'Jost',sans-serif;font-weight:500;letter-spacing:.32em;text-transform:uppercase;
+  font-size:8.5pt;color:var(--gold-light);margin-top:4.5mm}
+.list{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:12.5pt;text-align:center;line-height:1.35;margin-top:1.5mm}
+.list span{color:var(--gold);padding:0 1mm}
+.url{margin-top:auto;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:10pt;opacity:.8}
+
+/* A4 sheet: 2x2 cards, centred, dashed cut lines */
+body.a4{width:210mm;height:297mm;display:grid;place-content:center}
+body.a4 .sheet{display:grid;grid-template-columns:105mm 105mm;grid-template-rows:148mm 148mm;outline:.2mm dashed #999}
+body.a4 .card{outline:.2mm dashed #999}
+@page{size:105mm 148mm;margin:0}
+body.a4{}
+</style>
+<style id="page-a4" media="not all">@page{size:A4;margin:0}</style>
+</head>
+<body>
+<template id="tpl">
+  <div class="card">
+    <img class="logo" src="/img/logo/oneten-white-logo.png" alt="Cafe OneTen">
+    <p class="welcome">Welcome to your table</p>
+    <div class="qr-wrap"><img src="/src-assets/qr/oneten-table-qr.svg" alt="QR code to cafeoneten.com/table"></div>
+    <p class="scan">Scan me</p>
+    <p class="list">Menu<span>·</span>Wi-Fi<span>·</span>Games<br>Feedback<span>·</span>Google review</p>
+    <p class="url">cafeoneten.com/table</p>
+  </div>
+</template>
+<script>
+  var a4 = new URLSearchParams(location.search).get('sheet') === 'a4';
+  var tpl = document.getElementById('tpl').content;
+  if (a4) {
+    document.body.classList.add('a4');
+    document.getElementById('page-a4').media = 'all';
+    var sheet = document.createElement('div'); sheet.className = 'sheet';
+    for (var i = 0; i < 4; i++) sheet.appendChild(tpl.cloneNode(true));
+    document.body.appendChild(sheet);
+  } else {
+    document.body.appendChild(tpl.cloneNode(true));
+  }
+</script>
+</body>
+</html>

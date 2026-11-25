@@ -172,7 +172,7 @@ ASCII: `PDF -> img/menu-pages -> MENUS -> modal`; `menu-data.json -> build_menu.
 ```mermaid
 graph TD
     QR["QR on table<br/>src-assets/qr/"] --> T["/table/"]
-    T --> R1["1 Recommendations<br/>(js/table.js RECOMMENDATIONS)"]
+    T --> R1["1-3 Food, Drink, Dessert recommendations<br/>(js/table.js RECOMMENDATIONS)"]
     T --> R2["2 Leave feedback"]
     T --> R3["3 View menu"]
     T --> R4["4 Wi-Fi sheet (dialog)"]
@@ -278,11 +278,14 @@ This is what the November 2026 refresh did (`OneTen Menu November.pdf`, 26 pages
 
 ### Change the recommendations
 
-1. Edit the `RECOMMENDATIONS` array at the top of `js/table.js`. Each entry: `slug`, `name`, `desc`, `img` (with `?v=`), `w`, `h` (image pixel size, avoids layout shift) and `badge` (the chip text; defaults to "Bestseller", e.g. set `'Chef\'s pick'` for one card). Any count from 1 to 10+ works.
-2. The "N dishes we love right now" subtitle and the `1/5` counters are **automatic** from the array length.
-3. Mirror the same cards as **static HTML** in `table/index.html` (the `<ul class="tbl-recs" id="tbl-recs">` list, about L53-75). The JS re-renders over it, but the static markup is what shows without JavaScript and before JS runs, and it carries a hard-coded "Five dishes" subtitle, `1/5` labels and `aria-label="1 of 5"`.
-4. New photo: put a WebP in `img/dishes/` named `<dish>-cafe-oneten.webp` (and the JPEG master in `src-assets/`).
-5. Bump `table.js?v=` on `/table/` and `/table/feedback/` (currently `2611h`).
+`/table/` has **three collapsible rows**: OneTen Food, Drink and Dessert Recommendations. Each opens its own swipe row.
+
+1. Edit `RECOMMENDATIONS` at the top of `js/table.js`. It has three lists: `food`, `drinks`, `desserts`. Each entry: `name` (required), optional `img` (with `?v=`), `w`, `h` (image pixel size, avoids layout shift) and `badge` (chip text; defaults to "Bestseller").
+2. **No photo yet?** Leave out `img`: the card shows a gold line icon (plate, cup or cake) on espresso instead.
+3. Counts are automatic: the `1/4` counters and the "Four drinks we love right now" subtitle come from each list's length. An **empty list hides its row**.
+4. `table/index.html` holds only the three empty `<ul data-recs="food|drinks|desserts">` lists; all cards are rendered by JS, so there is nothing to mirror in HTML.
+5. New photo: put a WebP in `img/dishes/` named `<dish>-cafe-oneten.webp` (JPEG master in `src-assets/`).
+6. Bump `table.js?v=` on `/table/` and `/table/feedback/` (currently `2611i`).
 
 ### Change the feedback questions
 
@@ -400,9 +403,9 @@ The Google Form and its response Sheet **belong to the site maintainer's Google 
 |---|---|---|
 | `css/style.css` | `?v=2611c` | 15 refs, all public pages |
 | `js/main.js`, `js/gallery.js` | `?v=2611` | public pages |
-| `css/table.css` | `?v=2611g` | 4 refs, `/table/*` |
+| `css/table.css` | `?v=2611i` | 4 refs, `/table/*` |
 | `css/games.css` | `?v=2611e` | 2 game pages |
-| `js/table.js` | `?v=2611h` | `/table/`, `/table/feedback/` |
+| `js/table.js` | `?v=2611i` | `/table/`, `/table/feedback/` |
 | Menu/dish/hero images | `?v=2611` | `MENUS` in `main.js` (37 refs), page previews, `RECOMMENDATIONS`, menu hero |
 
 Convention: `YYMM` plus a letter that increments per change (`2611c` -> `2611d`). When you change a file, change the string in **every** page that references it (`grep -rn "style.css?v=" --include=index.html .`).
@@ -417,7 +420,7 @@ Convention: `YYMM` plus a letter that increments per change (`2611c` -> `2611d`)
 
 From `../tasks/todo.md` and `plan.md`:
 
-- [ ] **Real recommendations.** The five current picks (Belgian Slice, Peri Peri Paneer Rice Bowl, Deconstructed Tiramisu, French Toast, Assorted Bread Basket) are demo choices. Owner confirms; update `RECOMMENDATIONS` and the static cards.
+- [ ] **Real recommendations + drink photos.** Current demo picks: food (Peri Peri Paneer Rice Bowl, French Toast, Assorted Bread Basket), drinks (Date Night, Pistachio Latte, Mont Blanc, Biscoff Velvet, no photos yet), desserts (Belgian Slice, Deconstructed Tiramisu, Crème Brûlée). Owner confirms; update `RECOMMENDATIONS`.
 - [ ] **Real Wi-Fi name and password.** Demo values `CafeOneTen_Guest` / `oneten@2025` are in `table/index.html`.
 - [ ] **Official `g.page/r/...` review link.** The current link is a Google search "write a review" URL; swap in the owner's official short link in both places.
 - [ ] **Real gallery photos.** The 10 current photos are the available dish and interior shots; the page still carries a "More photos coming soon" demo note. Three dishes are excluded because they left the menu (fruit cake, pavlova, chocolate strawberries).

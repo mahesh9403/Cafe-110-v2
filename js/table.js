@@ -9,43 +9,27 @@
    Descriptions come from _data/menu/menu-data.json. No prices.
    `badge` is the chip text (default "Bestseller"); switch one item to
    "Chef's pick" here to relabel just that card. */
-var RECOMMENDATIONS = [
-  {
-    slug: 'belgian-slice',
-    name: 'Belgian Slice',
-    desc: 'Moist chocolate cake layers with creamy chocolate mousse and a hot chocolate ganache drizzle.',
-    img: '/img/dishes/belgian-slice-cafe-oneten.webp?v=2611',
-    w: 720, h: 1280, badge: 'Bestseller'
-  },
-  {
-    slug: 'peri-peri-paneer-rice-bowl',
-    name: 'Peri Peri Paneer Rice Bowl',
-    desc: 'Fragrant brown rice with grated coconut and spicy bean gravy, topped with veg stir fry and peri peri paneer.',
-    img: '/img/dishes/peri-peri-paneer-rice-bowl-cafe-oneten.webp?v=2611',
-    w: 720, h: 1280, badge: 'Bestseller'
-  },
-  {
-    slug: 'deconstructed-tiramisu',
-    name: 'Deconstructed Tiramisu',
-    desc: 'Savoiardi biscuits soaked in espresso with dollops of whipped mascarpone, dusted with cocoa.',
-    img: '/img/dishes/deconstructed-tiramisu-cafe-oneten.webp?v=2611',
-    w: 1084, h: 1600, badge: 'Bestseller'
-  },
-  {
-    slug: 'french-toast',
-    name: 'French Toast',
-    desc: 'Buttery brioche soaked in a vanilla-cinnamon egg custard, grilled golden, with whipped cream cheese and maple syrup.',
-    img: '/img/dishes/french-toast-cafe-oneten.webp?v=2611',
-    w: 608, h: 1080, badge: 'Bestseller'
-  },
-  {
-    slug: 'assorted-bread-basket',
-    name: 'Assorted Bread Basket',
-    desc: 'An assortment of breads with lemon mustard butter, buldak butter, charred corn dip and spinach artichoke dip.',
-    img: '/img/dishes/assorted-bread-basket-cafe-oneten.webp?v=2611',
-    w: 1280, h: 720, badge: 'Bestseller'
-  }
-];
+var RECOMMENDATIONS = {
+  // Three rows on /table/: food, drinks, desserts. Any count per list (0 hides the row).
+  // img is optional: without one the card shows a gold icon tile (e.g. drinks with no photo yet).
+  // badge defaults to "Bestseller".
+  food: [
+    { name: 'Peri Peri Paneer Rice Bowl', img: '/img/dishes/peri-peri-paneer-rice-bowl-cafe-oneten.webp?v=2611', w: 720, h: 1280 },
+    { name: 'French Toast', img: '/img/dishes/french-toast-cafe-oneten.webp?v=2611', w: 608, h: 1080 },
+    { name: 'Assorted Bread Basket', img: '/img/dishes/assorted-bread-basket-cafe-oneten.webp?v=2611', w: 1280, h: 720 }
+  ],
+  drinks: [
+    { name: 'Date Night' },
+    { name: 'Pistachio Latte' },
+    { name: 'Mont Blanc' },
+    { name: 'Biscoff Velvet' }
+  ],
+  desserts: [
+    { name: 'Belgian Slice', img: '/img/dishes/belgian-slice-cafe-oneten.webp?v=2611', w: 720, h: 1280 },
+    { name: 'Deconstructed Tiramisu', img: '/img/dishes/deconstructed-tiramisu-cafe-oneten.webp?v=2611', w: 1084, h: 1600 },
+    { name: 'Crème Brûlée' }
+  ]
+};
 
 (function () {
   /* ---- helpers ---- */
@@ -66,32 +50,35 @@ var RECOMMENDATIONS = [
   if (greet) greet.textContent = timeOfDay(new Date().getHours());
 
   /* ---- recommendations carousel ---- */
-  var recs = document.getElementById('tbl-recs');
-  if (recs) {
-    var total = RECOMMENDATIONS.length;  // any count works: 1–10+
-    var html = RECOMMENDATIONS.map(function (d, i) {
-      // Chip text comes from d.badge (default "Bestseller") so one card can be relabelled.
-      var badge = d.badge || 'Bestseller';
-      var chip = '<span class="tbl-rec-chip">' + esc(badge) + '</span>';
+  var REC_NOUN = { food: ['dish', 'dishes'], drinks: ['drink', 'drinks'], desserts: ['dessert', 'desserts'] };
+  var REC_ICON = {
+    food: '<path d="M3 17h18"/><path d="M5 17a7 7 0 0 1 14 0"/><path d="M12 8V6.5"/><path d="M10.5 6.5h3"/><path d="M4 20h16"/>',
+    drinks: '<path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 10.5h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3.5c0 1.2 1 1.6 1 2.8M12 3.5c0 1.2 1 1.6 1 2.8"/>',
+    desserts: '<path d="M4 20h16"/><path d="M5 20v-7h14v7"/><path d="M5 15.5c1.2 1.2 2.3 1.2 3.5 0s2.3-1.2 3.5 0 2.3 1.2 3.5 0 2.3-1.2 3.5 0"/><path d="M12 13V9.5"/><path d="M12 6.5c.8.8.8 1.8 0 3-.8-1.2-.8-2.2 0-3z"/>'
+  };
+  var NUM_WORDS = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'];
+
+  document.querySelectorAll('[data-recs]').forEach(function (list) {
+    var key = list.getAttribute('data-recs');
+    var items = RECOMMENDATIONS[key] || [];
+    var row = document.querySelector('[data-recs-row="' + key + '"]');
+    if (!items.length) { if (row) row.hidden = true; return; }
+    var total = items.length;
+    list.innerHTML = items.map(function (d, i) {
+      var chip = '<span class="tbl-rec-chip">' + esc(d.badge || 'Bestseller') + '</span>';
       var num = '<span class="tbl-rec-num" aria-label="' + (i + 1) + ' of ' + total + '">' + (i + 1) + '/' + total + '</span>';
-      var loading = i === 0 ? '' : ' loading="lazy"';
-      return (
-        '<li class="tbl-rec">' +
-          '<div class="tbl-rec-media">' + chip + num +
-            '<img src="' + esc(d.img) + '" alt="' + esc(d.name) + '" width="' + d.w + '" height="' + d.h + '"' + loading + ' decoding="async">' +
-          '</div>' +
-          '<div class="tbl-rec-body">' +
-            '<p class="tbl-rec-name">' + esc(d.name) + '</p>' +
-          '</div>' +
-        '</li>'
-      );
+      var media = d.img
+        ? '<img src="' + esc(d.img) + '" alt="' + esc(d.name) + '"' + (d.w ? ' width="' + d.w + '" height="' + d.h + '"' : '') + ' loading="lazy" decoding="async">'
+        : '<svg class="tbl-rec-ph" viewBox="0 0 24 24" aria-hidden="true">' + (REC_ICON[key] || '') + '</svg>';
+      return '<li class="tbl-rec">' +
+          '<div class="tbl-rec-media' + (d.img ? '' : ' tbl-rec-media--ph') + '">' + chip + num + media + '</div>' +
+          '<div class="tbl-rec-body"><p class="tbl-rec-name">' + esc(d.name) + '</p></div>' +
+        '</li>';
     }).join('');
-    recs.innerHTML = html;
-    var words = ['', 'One dish', 'Two dishes', 'Three dishes', 'Four dishes', 'Five dishes',
-                 'Six dishes', 'Seven dishes', 'Eight dishes', 'Nine dishes', 'Ten dishes'];
-    var sub = document.getElementById('tbl-recs-sub');
-    if (sub) sub.textContent = (words[total] || total + ' dishes') + ' we love right now';
-  }
+    var sub = document.querySelector('[data-recs-sub="' + key + '"]');
+    var noun = REC_NOUN[key] || ['item', 'items'];
+    if (sub) sub.textContent = (NUM_WORDS[total] || total) + ' ' + noun[total === 1 ? 0 : 1] + ' we love right now';
+  });
 
   /* ---- Wi-Fi sheet ---- */
   var sheet = document.getElementById('wifi-sheet');

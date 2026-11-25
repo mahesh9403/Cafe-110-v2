@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>OneTen table sticker</title>
+<!--
+  Table sticker for the /table/ QR page. Trim 122 x 56 mm, +3 mm bleed each side (128 x 62 mm page).
+  Open via the local server (fonts/logo load from site paths):
+    ?v=cream     cream version (default)        ?v=espresso   dark version
+    ?preview     both versions on screen with trim line, no bleed page size
+  Print PDFs: print/oneten-table-sticker-{cream,espresso}.pdf
+-->
+<style>
+@font-face{font-family:'Jost';font-weight:500;src:url('/fonts/jost-500.woff2') format('woff2')}
+@font-face{font-family:'Jost';font-weight:600;src:url('/fonts/jost-600.woff2') format('woff2')}
+@font-face{font-family:'Dancing Script';font-weight:600;src:url('/fonts/dancing-script-600.woff2') format('woff2')}
+
+:root{--bleed:3mm;--w:122mm;--h:56mm}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{-webkit-print-color-adjust:exact;print-color-adjust:exact;background:#fff}
+@page{size:128mm 62mm;margin:0}
+
+/* page = trim + bleed; artwork fills bleed, content stays in the safe area */
+.page{width:calc(var(--w) + 2*var(--bleed));height:calc(var(--h) + 2*var(--bleed));padding:var(--bleed);background:var(--bg)}
+.st{width:var(--w);height:var(--h);position:relative;display:flex;align-items:center;gap:4.5mm;padding:5mm 5mm 5mm 5.5mm;color:var(--ink)}
+.st::before{content:"";position:absolute;inset:2mm;border:.3mm solid var(--line);border-radius:3mm}
+
+.cream   {--bg:#F6EEDF;--ink:#3B1F12;--gold:#B8862A;--line:#C8952A;--qrbg:#F7F2E6}
+.espresso{--bg:#1C120A;--ink:#F7F2E6;--gold:#E0AE4A;--line:#C8952A;--qrbg:#F7F2E6}
+
+.qr{flex:none;display:flex;flex-direction:column;align-items:center;gap:1.3mm}
+.qr-box{width:39mm;height:39mm;background:var(--qrbg);border-radius:2.2mm;padding:1.2mm;box-shadow:0 0 0 .35mm var(--line)}
+.qr-box img{display:block;width:100%;height:100%}
+.qr p{font:600 6.6pt/1 'Jost',sans-serif;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);padding-left:.34em}
+
+.rule{flex:none;width:0;align-self:stretch;margin:3mm 0;border-left:.35mm dotted var(--line)}
+
+.side{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:space-between;height:100%;padding:1mm 0}
+.logo{width:37mm;height:auto;display:block}
+.family{height:13.5mm;width:auto;display:block}
+.icons{display:flex;gap:4.6mm;list-style:none}
+.icons li{display:flex;flex-direction:column;align-items:center;gap:1mm;font:500 6pt/1 'Jost',sans-serif;letter-spacing:.06em}
+.icons circle{fill:var(--gold);stroke:none}
+.icons svg{width:6mm;height:6mm;fill:none;stroke:var(--gold);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* preview mode */
+body.preview{padding:10mm;display:grid;gap:8mm;justify-content:start;background:#ddd}
+body.preview .page{padding:0;width:var(--w);height:var(--h)}
+</style>
+</head>
+<body>
+<template id="tpl">
+  <div class="page"><div class="st">
+    <div class="qr">
+      <div class="qr-box"><img src="/src-assets/qr/oneten-table-qr.svg" alt="QR code to cafeoneten.com/table"></div>
+      <p>Scan me</p>
+    </div>
+    <span class="rule" aria-hidden="true"></span>
+    <div class="side">
+      <img class="logo" alt="Cafe OneTen">
+      <img class="family" alt="">
+      <ul class="icons">
+        <li><svg viewBox="0 0 24 24"><path d="M7 3v18M4.5 3v5a2.5 2.5 0 0 0 5 0V3M17.5 21V3c-2.2 1.2-3.5 4-3.5 7.5h3.5"/></svg>Menu</li>
+        <li><svg viewBox="0 0 24 24"><path d="M3.5 9.5a12 12 0 0 1 17 0M6.8 13a7.3 7.3 0 0 1 10.4 0M10 16.4a2.8 2.8 0 0 1 4 0"/><circle cx="12" cy="19.6" r=".9"/></svg>Wi-Fi</li>
+        <li><svg viewBox="0 0 24 24"><path d="M9.3 4v16M14.7 4v16M4 9.3h16M4 14.7h16"/></svg>Games</li>
+        <li><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H10l-4.5 3.5v-3.5H4z"/><path d="M12 13.6l-2.2-2.1a1.35 1.35 0 0 1 2.2-1.5 1.35 1.35 0 0 1 2.2 1.5z"/></svg>Feedback</li>
+      </ul>
+    </div>
+  </div></div>
+</template>
+<script>
+  var q = new URLSearchParams(location.search);
+  var variants = q.has('preview') ? ['cream','espresso'] : [q.get('v') === 'espresso' ? 'espresso' : 'cream'];
+  if (q.has('preview')) document.body.classList.add('preview');
+  variants.forEach(function (v) {
+    var n = document.getElementById('tpl').content.cloneNode(true);
+    n.querySelector('.page').classList.add(v);
+    n.querySelector('.logo').src = v === 'espresso' ? 'logo-gold-light.png' : 'logo-gold-dark.png';
+    n.querySelector('.family').src = v === 'espresso' ? 'family-cream.png' : 'family-ink.png';
+    document.body.appendChild(n);
+  });
+</script>
+</body>
+</html>

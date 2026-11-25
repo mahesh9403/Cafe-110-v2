@@ -15,7 +15,7 @@
   <link rel="manifest" href="/manifest.json?v=2611" />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/cormorant-garamond-500.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/jost-400.woff2" crossorigin />
-  <link rel="stylesheet" href="/css/table.css?v=2611h" />
+  <link rel="stylesheet" href="/css/table.css?v=2611i" />
 </head>
 <body class="tbl">
 
@@ -35,43 +35,59 @@
     <h2 class="tbl-section-title">At your <span class="script">service</span></h2>
     <ul class="tbl-rows">
 
-      <li>
+      <li data-recs-row="food">
         <details class="tbl-panel">
           <summary class="tbl-row">
             <span class="tbl-tile" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13.9V20h12v-6.1"/><path d="M6 17h12"/><path d="M12 4a4 4 0 0 1 3.7 2.5A3.5 3.5 0 1 1 18 13.9H6a3.5 3.5 0 1 1 2.3-7.4A4 4 0 0 1 12 4z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18"/><path d="M5 17a7 7 0 0 1 14 0"/><path d="M12 8V6.5"/><path d="M10.5 6.5h3"/><path d="M4 20h16"/></svg>
             </span>
             <span class="tbl-row-text">
-              <span class="tbl-row-title">OneTen Recommendations</span>
-              <span class="tbl-row-sub" id="tbl-recs-sub">Five dishes we love right now</span>
+              <span class="tbl-row-title">OneTen Food Recommendations</span>
+              <span class="tbl-row-sub" data-recs-sub="food">Our current favourites</span>
             </span>
             <span class="tbl-row-arrow tbl-panel-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
           </summary>
           <div class="tbl-panel-body">
-            <!-- Static markup mirrors js/table.js RECOMMENDATIONS exactly; every card
-                 carries the "Bestseller" chip. JS re-renders this on load. -->
-            <ul class="tbl-recs" id="tbl-recs">
-              <li class="tbl-rec">
-                <div class="tbl-rec-media"><span class="tbl-rec-chip">Bestseller</span><span class="tbl-rec-num" aria-label="1 of 5">1/5</span><img src="/img/dishes/belgian-slice-cafe-oneten.webp?v=2611" alt="Belgian Slice" width="720" height="1280" decoding="async"></div>
-                <div class="tbl-rec-body"><p class="tbl-rec-name">Belgian Slice</p></div>
-              </li>
-              <li class="tbl-rec">
-                <div class="tbl-rec-media"><span class="tbl-rec-chip">Bestseller</span><span class="tbl-rec-num" aria-label="2 of 5">2/5</span><img src="/img/dishes/peri-peri-paneer-rice-bowl-cafe-oneten.webp?v=2611" alt="Peri Peri Paneer Rice Bowl" width="720" height="1280" loading="lazy" decoding="async"></div>
-                <div class="tbl-rec-body"><p class="tbl-rec-name">Peri Peri Paneer Rice Bowl</p></div>
-              </li>
-              <li class="tbl-rec">
-                <div class="tbl-rec-media"><span class="tbl-rec-chip">Bestseller</span><span class="tbl-rec-num" aria-label="3 of 5">3/5</span><img src="/img/dishes/deconstructed-tiramisu-cafe-oneten.webp?v=2611" alt="Deconstructed Tiramisu" width="1084" height="1600" loading="lazy" decoding="async"></div>
-                <div class="tbl-rec-body"><p class="tbl-rec-name">Deconstructed Tiramisu</p></div>
-              </li>
-              <li class="tbl-rec">
-                <div class="tbl-rec-media"><span class="tbl-rec-chip">Bestseller</span><span class="tbl-rec-num" aria-label="4 of 5">4/5</span><img src="/img/dishes/french-toast-cafe-oneten.webp?v=2611" alt="French Toast" width="608" height="1080" loading="lazy" decoding="async"></div>
-                <div class="tbl-rec-body"><p class="tbl-rec-name">French Toast</p></div>
-              </li>
-              <li class="tbl-rec">
-                <div class="tbl-rec-media"><span class="tbl-rec-chip">Bestseller</span><span class="tbl-rec-num" aria-label="5 of 5">5/5</span><img src="/img/dishes/assorted-bread-basket-cafe-oneten.webp?v=2611" alt="Assorted Bread Basket" width="1280" height="720" loading="lazy" decoding="async"></div>
-                <div class="tbl-rec-body"><p class="tbl-rec-name">Assorted Bread Basket</p></div>
-              </li>
-            </ul>
+            <!-- Cards are rendered by js/table.js from RECOMMENDATIONS.food -->
+            <ul class="tbl-recs" data-recs="food"></ul>
+          </div>
+        </details>
+      </li>
+
+      <li data-recs-row="drinks">
+        <details class="tbl-panel">
+          <summary class="tbl-row">
+            <span class="tbl-tile" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 10.5h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3.5c0 1.2 1 1.6 1 2.8M12 3.5c0 1.2 1 1.6 1 2.8"/></svg>
+            </span>
+            <span class="tbl-row-text">
+              <span class="tbl-row-title">OneTen Drink Recommendations</span>
+              <span class="tbl-row-sub" data-recs-sub="drinks">Our current favourites</span>
+            </span>
+            <span class="tbl-row-arrow tbl-panel-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+          </summary>
+          <div class="tbl-panel-body">
+            <!-- Cards are rendered by js/table.js from RECOMMENDATIONS.drinks -->
+            <ul class="tbl-recs" data-recs="drinks"></ul>
+          </div>
+        </details>
+      </li>
+
+      <li data-recs-row="desserts">
+        <details class="tbl-panel">
+          <summary class="tbl-row">
+            <span class="tbl-tile" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M5 20v-7h14v7"/><path d="M5 15.5c1.2 1.2 2.3 1.2 3.5 0s2.3-1.2 3.5 0 2.3 1.2 3.5 0 2.3-1.2 3.5 0"/><path d="M12 13V9.5"/><path d="M12 6.5c.8.8.8 1.8 0 3-.8-1.2-.8-2.2 0-3z"/></svg>
+            </span>
+            <span class="tbl-row-text">
+              <span class="tbl-row-title">OneTen Dessert Recommendations</span>
+              <span class="tbl-row-sub" data-recs-sub="desserts">Our current favourites</span>
+            </span>
+            <span class="tbl-row-arrow tbl-panel-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+          </summary>
+          <div class="tbl-panel-body">
+            <!-- Cards are rendered by js/table.js from RECOMMENDATIONS.desserts -->
+            <ul class="tbl-recs" data-recs="desserts"></ul>
           </div>
         </details>
       </li>
@@ -247,6 +263,6 @@
   </ul>
 </nav>
 
-<script src="/js/table.js?v=2611h" defer></script>
+<script src="/js/table.js?v=2611i" defer></script>
 </body>
 </html>
