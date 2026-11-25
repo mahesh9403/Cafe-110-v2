@@ -403,7 +403,7 @@ The Google Form and its response Sheet **belong to the site maintainer's Google 
 |---|---|---|
 | `css/style.css` | `?v=2611c` | 15 refs, all public pages |
 | `js/main.js`, `js/gallery.js` | `?v=2611` | public pages |
-| `css/table.css` | `?v=2611i` | 4 refs, `/table/*` |
+| `css/table.css` | `?v=2611j` | 4 refs, `/table/*` |
 | `css/games.css` | `?v=2611e` | 2 game pages |
 | `js/table.js` | `?v=2611i` | `/table/`, `/table/feedback/` |
 | Menu/dish/hero images | `?v=2611` | `MENUS` in `main.js` (37 refs), page previews, `RECOMMENDATIONS`, menu hero |

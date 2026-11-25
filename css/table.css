@@ -187,8 +187,10 @@ a { color: inherit; }
 .tbl-section-title--logo {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 0.4em;
+  flex-wrap: nowrap;              /* logo + "recommendations" stay on one line */
+  gap: 0.3em;
+  font-size: clamp(1.15rem, 5.4vw, 1.7rem);
+  white-space: nowrap;
 }
 .tbl-title-logo {
   height: 1.7em;

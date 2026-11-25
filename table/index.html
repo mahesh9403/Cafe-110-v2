@@ -15,7 +15,7 @@
   <link rel="manifest" href="/manifest.json?v=2611" />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/cormorant-garamond-500.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/jost-400.woff2" crossorigin />
-  <link rel="stylesheet" href="/css/table.css?v=2611i" />
+  <link rel="stylesheet" href="/css/table.css?v=2611j" />
 </head>
 <body class="tbl">
 
@@ -31,8 +31,11 @@
 
   <main id="content">
 
-    <!-- Action rows -->
-    <h2 class="tbl-section-title">At your <span class="script">service</span></h2>
+    <!-- Recommendations (cards rendered by js/table.js from RECOMMENDATIONS) -->
+    <h2 class="tbl-section-title tbl-section-title--logo">
+      <img class="tbl-title-logo" src="/img/logo/oneten-gold-logo.webp?v=2611" alt="OneTen" width="800" height="254" />
+      <span class="script">recommendations</span>
+    </h2>
     <ul class="tbl-rows">
 
       <li data-recs-row="food">
@@ -42,8 +45,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18"/><path d="M5 17a7 7 0 0 1 14 0"/><path d="M12 8V6.5"/><path d="M10.5 6.5h3"/><path d="M4 20h16"/></svg>
             </span>
             <span class="tbl-row-text">
-              <span class="tbl-row-title">OneTen Food Recommendations</span>
-              <span class="tbl-row-sub" data-recs-sub="food">Our current favourites</span>
+              <span class="tbl-row-title">Food</span>
+              <span class="tbl-row-sub">Our kitchen&#8217;s favourites</span>
             </span>
             <span class="tbl-row-arrow tbl-panel-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
           </summary>
@@ -61,8 +64,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 10.5h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3.5c0 1.2 1 1.6 1 2.8M12 3.5c0 1.2 1 1.6 1 2.8"/></svg>
             </span>
             <span class="tbl-row-text">
-              <span class="tbl-row-title">OneTen Drink Recommendations</span>
-              <span class="tbl-row-sub" data-recs-sub="drinks">Our current favourites</span>
+              <span class="tbl-row-title">Drinks</span>
+              <span class="tbl-row-sub">What we love pouring</span>
             </span>
             <span class="tbl-row-arrow tbl-panel-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
           </summary>
@@ -80,8 +83,8 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M5 20v-7h14v7"/><path d="M5 15.5c1.2 1.2 2.3 1.2 3.5 0s2.3-1.2 3.5 0 2.3 1.2 3.5 0 2.3-1.2 3.5 0"/><path d="M12 13V9.5"/><path d="M12 6.5c.8.8.8 1.8 0 3-.8-1.2-.8-2.2 0-3z"/></svg>
             </span>
             <span class="tbl-row-text">
-              <span class="tbl-row-title">OneTen Dessert Recommendations</span>
-              <span class="tbl-row-sub" data-recs-sub="desserts">Our current favourites</span>
+              <span class="tbl-row-title">Desserts</span>
+              <span class="tbl-row-sub">Save room for these</span>
             </span>
             <span class="tbl-row-arrow tbl-panel-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
           </summary>
@@ -91,6 +94,12 @@
           </div>
         </details>
       </li>
+
+    </ul>
+
+    <!-- Action rows -->
+    <h2 class="tbl-section-title">At your <span class="script">service</span></h2>
+    <ul class="tbl-rows">
 
       <li>
         <a class="tbl-row" href="/table/feedback/">

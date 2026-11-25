@@ -50,13 +50,11 @@ var RECOMMENDATIONS = {
   if (greet) greet.textContent = timeOfDay(new Date().getHours());
 
   /* ---- recommendations carousel ---- */
-  var REC_NOUN = { food: ['dish', 'dishes'], drinks: ['drink', 'drinks'], desserts: ['dessert', 'desserts'] };
   var REC_ICON = {
     food: '<path d="M3 17h18"/><path d="M5 17a7 7 0 0 1 14 0"/><path d="M12 8V6.5"/><path d="M10.5 6.5h3"/><path d="M4 20h16"/>',
     drinks: '<path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 10.5h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3.5c0 1.2 1 1.6 1 2.8M12 3.5c0 1.2 1 1.6 1 2.8"/>',
     desserts: '<path d="M4 20h16"/><path d="M5 20v-7h14v7"/><path d="M5 15.5c1.2 1.2 2.3 1.2 3.5 0s2.3-1.2 3.5 0 2.3 1.2 3.5 0 2.3-1.2 3.5 0"/><path d="M12 13V9.5"/><path d="M12 6.5c.8.8.8 1.8 0 3-.8-1.2-.8-2.2 0-3z"/>'
   };
-  var NUM_WORDS = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'];
 
   document.querySelectorAll('[data-recs]').forEach(function (list) {
     var key = list.getAttribute('data-recs');
@@ -75,9 +73,6 @@ var RECOMMENDATIONS = {
           '<div class="tbl-rec-body"><p class="tbl-rec-name">' + esc(d.name) + '</p></div>' +
         '</li>';
     }).join('');
-    var sub = document.querySelector('[data-recs-sub="' + key + '"]');
-    var noun = REC_NOUN[key] || ['item', 'items'];
-    if (sub) sub.textContent = (NUM_WORDS[total] || total) + ' ' + noun[total === 1 ? 0 : 1] + ' we love right now';
   });
 
   /* ---- Wi-Fi sheet ---- */
